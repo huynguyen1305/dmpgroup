@@ -13,9 +13,8 @@ export default function AppThemeProvider({
       withGlobalStyles
       inherit
       theme={{
-        colorScheme: 'dark',
-        fontFamily: `"Noto Sans KR", sans-serif`,
-        headings: { fontFamily: `"Noto Sans KR", sans-serif` },
+        fontFamily: `'Montserrat', sans-serif`,
+        headings: { fontFamily: `'Montserrat', sans-serif` },
         // use em units for breakpoints only. Mantine wont accept px units
         breakpoints: {
           xs: em('480px'),

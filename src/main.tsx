@@ -10,6 +10,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import AppThemeProvider from './configs/mantineTheme';
 import './global.scss';
 import { queryClient } from './configs/queryClient';
+import AboutPage from './pages/AboutPage/AboutPage';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,12 @@ const router = createBrowserRouter([
       // },
       {
         path: '/',
+        index: true,
         element: <HomePage />,
+      },
+      {
+        path: '/gioi-thieu',
+        element: <AboutPage />,
       },
 
       {
