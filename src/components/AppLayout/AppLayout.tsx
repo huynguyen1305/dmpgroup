@@ -4,8 +4,8 @@ import AppHeader from '../AppHeader/AppHeader';
 const AppLayout = () => {
   return (
     <>
-      <main>
-        <AppHeader />
+      <AppHeader />
+      <main style={{ minHeight: '100vh' }}>
         <Outlet />
       </main>
     </>

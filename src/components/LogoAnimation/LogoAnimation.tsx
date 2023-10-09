@@ -1,35 +1,35 @@
-import React from 'react';
-import { gsap } from 'gsap';
+// import React from 'react';
+// import { gsap } from 'gsap';
 
 const LogoAnimation = () => {
-  const circleRef = React.useRef<SVGCircleElement>(null);
-  const circleRef2 = React.useRef<SVGCircleElement>(null);
-  const pathRef = React.useRef<SVGPathElement>(null);
+  // const circleRef = React.useRef<SVGCircleElement>(null);
+  // const circleRef2 = React.useRef<SVGCircleElement>(null);
+  // const pathRef = React.useRef<SVGPathElement>(null);
 
-  React.useLayoutEffect(() => {
-    if (circleRef?.current && pathRef?.current) {
-      const val = { distance: 0 };
-      gsap.to(val, {
-        // Animate from distance 0 to the total distance
-        distance: pathRef.current.getTotalLength(),
-        // Loop the animation
-        repeat: 1,
-        // Make the animation lasts 5 seconds
-        duration: 3,
-        // Function call on each frame of the animation
-        onUpdate: () => {
-          // Query a point at the new distance value
-          const point = pathRef.current.getPointAtLength(val.distance);
-          // Update the circle coordinates
-          circleRef.current.setAttribute('cx', point.x + 20);
-          circleRef.current.setAttribute('cy', point.y);
+  // React.useLayoutEffect(() => {
+  //   if (circleRef?.current && pathRef?.current) {
+  //     const val = { distance: 0 };
+  //     gsap.to(val, {
+  //       // Animate from distance 0 to the total distance
+  //       distance: pathRef.current.getTotalLength(),
+  //       // Loop the animation
+  //       repeat: 1,
+  //       // Make the animation lasts 5 seconds
+  //       duration: 3,
+  //       // Function call on each frame of the animation
+  //       onUpdate: () => {
+  //         // Query a point at the new distance value
+  //         const point = pathRef.current.getPointAtLength(val.distance);
+  //         // Update the circle coordinates
+  //         circleRef.current.setAttribute('cx', point.x + 20);
+  //         circleRef.current.setAttribute('cy', point.y);
 
-          circleRef2.current.setAttribute('cx', point.x);
-          circleRef2.current.setAttribute('cy', point.y);
-        },
-      });
-    }
-  }, []);
+  //         circleRef2.current.setAttribute('cx', point.x);
+  //         circleRef2.current.setAttribute('cy', point.y);
+  //       },
+  //     });
+  //   }
+  // }, []);
 
   return (
     <svg viewBox="-10 -10 173 61" width={173} height={61}>
@@ -39,7 +39,7 @@ const LogoAnimation = () => {
         stroke="#000"
         vectorEffect="non-scaling-stroke"
         className="infinity"
-        ref={pathRef}
+        // ref={pathRef}
       />
       <circle
         r="5"
@@ -47,7 +47,7 @@ const LogoAnimation = () => {
         cy="0"
         fill="purple"
         className="circle"
-        ref={circleRef}
+        // ref={circleRef}
       />
       <circle
         r="5"
@@ -55,7 +55,7 @@ const LogoAnimation = () => {
         cy="0"
         fill="purple"
         className="circle"
-        ref={circleRef2}
+        // ref={circleRef2}
       />
     </svg>
   );
