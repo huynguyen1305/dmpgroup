@@ -18,6 +18,7 @@ export const useStyles = createStyles((_theme, params: any) => {
       padding: '0 5vw',
       backgroundColor: params ? 'white' : 'transparent',
       boxShadow: params ? '0 2px 4px 0 rgba(0, 0, 0, 0.1)' : 'none',
+      transition: 'all 0.3s linear',
     },
     logo: {
       height: '80px',
@@ -38,7 +39,7 @@ export const useStyles = createStyles((_theme, params: any) => {
         bottom: -8,
         left: '50%',
         transform: 'translateX(-50%)',
-        height: '0.2rem',
+        height: '2px',
         background: params ? 'black' : 'rgba(255, 255, 255, 1)',
         width: '0',
         borderRadius: '100px',

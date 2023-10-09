@@ -1,7 +1,7 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useStyles } from './styles';
 import logo from '@/assets/images/logo-dmp.png';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const navBars = [
@@ -22,10 +22,11 @@ const AppHeader = () => {
   const [isShowNav, setIsShowNav] = useState(false);
   const { classes } = useStyles(isShowNav);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const hash = location.hash;
-    if (hash === '#about-us') {
+    if (hash === '#about-us' || hash === '#news') {
       setIsShowNav(true);
     } else {
       setIsShowNav(false);
@@ -34,8 +35,13 @@ const AppHeader = () => {
 
   return (
     <header className={classes.wrapper}>
-      <Link to="/">
-        <div className={classes.logo}>
+      <a href="/#welcome-section">
+        <div
+          className={classes.logo}
+          onClick={() => {
+            navigate('/');
+          }}
+        >
           <img
             src={logo}
             alt="logo"
@@ -45,7 +51,7 @@ const AppHeader = () => {
             }}
           />
         </div>
-      </Link>
+      </a>
 
       <nav>
         {navBars.map((navbar) => (
@@ -58,8 +64,6 @@ const AppHeader = () => {
           </NavLink>
         ))}
       </nav>
-
-      <div></div>
     </header>
   );
 };

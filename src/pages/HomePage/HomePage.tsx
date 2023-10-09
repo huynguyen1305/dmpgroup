@@ -3,16 +3,20 @@ import useIsBigScreen from '../../hooks/useIsBigScreen';
 import { useLayoutEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
+import Activity from './Activity/Activity';
+import News from './News/News';
 // @ts-ignore
 import PageAble from 'pageable';
+import useAppStore from '@/store/appStore';
 
 const HomePage = () => {
   const isDesktop = useIsBigScreen();
   console.log('isDesktop', isDesktop);
-  const pageAble = useRef(null);
+  const pageAbleRef = useRef(null);
+  const { setHomePageScroll } = useAppStore();
 
   useLayoutEffect(() => {
-    pageAble.current = new PageAble('#containerPage', {
+    const pageAble = new PageAble('#containerPage', {
       pips: true,
       animation: 500,
       delay: 100,
@@ -42,6 +46,8 @@ const HomePage = () => {
         );
       },
     });
+    pageAbleRef.current = pageAble;
+    setHomePageScroll && setHomePageScroll(pageAble);
   }, []);
 
   return (
@@ -54,14 +60,21 @@ const HomePage = () => {
       }}
     >
       <div id="containerPage">
-        <div data-anchor="welcome-section">
+        <div data-anchor="welcome-section" id="welcome-section">
           <Welcome />
         </div>
-        <div data-anchor="about-us">
+        <div data-anchor="about-us" id="about-us">
           <AboutUs />
         </div>
-        <div data-anchor="Page 3">Page 3</div>
-        <div data-anchor="Page 4">Page 4</div>
+        <div data-anchor="activity" id="activity">
+          <Activity />
+        </div>
+        <div data-anchor="news" id="news">
+          <News />
+        </div>
+        <div data-anchor="news22" id="news22">
+          123
+        </div>
       </div>
     </Box>
   );

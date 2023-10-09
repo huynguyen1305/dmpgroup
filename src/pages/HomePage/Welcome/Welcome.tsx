@@ -29,6 +29,7 @@ const Welcome = () => {
   };
   return (
     <Swiper
+      grabCursor
       pagination={pagination}
       modules={[Pagination, Autoplay]}
       className={styles.swiperContainer}
