@@ -1,5 +1,3 @@
-import React from 'react';
-
 import image1 from '@/assets/images/about-us-1.jpg';
 import image2 from '@/assets/images/about-us-2.jpg';
 
