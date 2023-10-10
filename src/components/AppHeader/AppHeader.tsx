@@ -26,7 +26,11 @@ const AppHeader = () => {
 
   useEffect(() => {
     const hash = location.hash;
-    if (hash === '#about-us' || hash === '#news') {
+    if (
+      hash === '#about-us' ||
+      hash === '#news' ||
+      hash === '#footer-section'
+    ) {
       setIsShowNav(true);
     } else {
       setIsShowNav(false);

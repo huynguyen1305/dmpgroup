@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { SwiperSlide, Swiper } from 'swiper/react';
 
+import { IconArrowBarToRight } from '@tabler/icons-react';
+
 import customer1 from '@/assets/images/Clients-06-300x205.png';
 import customer2 from '@/assets/images/Clients-24-300x205.png';
 import customer3 from '@/assets/images/Clients-23-300x205.png';
@@ -127,6 +129,7 @@ const AboutUs = () => {
               hành trình xây dựng tương lai thịnh vượng và bền vững
             </p>
             <div className={styles.buttonMore}>
+              <IconArrowBarToRight />
               <Link to="/gioi-thieu">Xem thêm</Link>
             </div>
           </div>

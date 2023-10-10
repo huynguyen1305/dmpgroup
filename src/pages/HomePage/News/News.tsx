@@ -1,55 +1,71 @@
+import { useMediaQuery } from '@mantine/hooks';
 import CardNews from './CardNews/CardNews';
+
+import customer1 from '@/assets/images/Clients-06-300x205.png';
+import bannerMedal from '@/assets/images/home-banner-medal.jpg';
+import banner1 from '@/assets/images/home-banner-1.jpg';
+import banner2 from '@/assets/images/home-banner-2.jpg';
+import banner3 from '@/assets/images/home-banner-3.jpg';
+import banner4 from '@/assets/images/home-banner-4.png';
+
 const News = () => {
+  const isHasRow = useMediaQuery('(min-width: 1400px)');
   const cardNews = [
     {
       key: 1,
-      title: 'Tin tức 1',
+      title: 'Tin tức 1 Tin tức 1 Tin tức 1 Tin tức 1 Tin tức 1',
       content: 'Nội dung tin tức 1',
+      img: banner1,
+      createAt: new Date(),
     },
     {
       key: 2,
-      title: 'Tin tức 2',
+      title:
+        'Tin tức 2 Tin tức 1 Tin tức 1 Tin tức 1 Tin tức 1 Tin tức 1 Tin tức 1 tức 1 Tin tức 1 Tin tức 1 Tin tức 1 Tin tức ',
       content: 'Nội dung tin tức 2',
+      img: banner4,
+      createAt: new Date(),
     },
     {
       key: 3,
       title: 'Tin tức 3',
       content: 'Nội dung tin tức 3',
+      img: bannerMedal,
+      createAt: new Date(),
     },
     {
       key: 4,
       title: 'Tin tức 4',
       content: 'Nội dung tin tức 4',
+      img: banner3,
+      createAt: new Date(),
     },
     {
       key: 5,
       title: 'Tin tức 5',
       content: 'Nội dung tin tức 5',
+      img: banner2,
+      createAt: new Date(),
     },
 
     {
-      key: 2,
-      title: 'Tin tức 2',
-      content: 'Nội dung tin tức 2',
-    },
-    {
-      key: 3,
-      title: 'Tin tức 3',
-      content: 'Nội dung tin tức 3',
-    },
-    {
-      key: 4,
-      title: 'Tin tức 4',
-      content: 'Nội dung tin tức 4',
-    },
-    {
-      key: 5,
-      title: 'Tin tức 5',
-      content: 'Nội dung tin tức 5',
+      key: 6,
+      title: 'Tin tức 6',
+      content: 'Nội dung tin tức 6',
+      img: customer1,
+      createAt: new Date(),
     },
   ];
   return (
-    <section style={{ width: '100%', height: '100%', padding: '100px' }}>
+    <section
+      style={{
+        width: '100%',
+        height: '100%',
+        padding: '100px',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       <div>
         <h3
           style={{
@@ -60,6 +76,7 @@ const News = () => {
             fontSize: '3vw',
             fontWeight: '500',
             textTransform: 'capitalize',
+            marginBottom: '8px',
           }}
         >
           Tin Tức
@@ -67,16 +84,39 @@ const News = () => {
       </div>
       <div
         style={{
-          display: 'grid',
-          gap: '2rem',
-          gridTemplateColumns: 'repeat(3, minmax(auto, 1fr))',
-          gridTemplateRows: 'repeat(2, 250px)',
-          overflow: 'hidden',
+          flex: 1,
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
         }}
       >
-        {cardNews.map((item) => {
-          return <CardNews key={item.key} item={item} />;
-        })}
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            margin: 'auto',
+            display: 'grid',
+            gap: '1.5rem',
+
+            gridTemplateColumns: `${
+              isHasRow ? 'repeat(3, 1fr)' : 'repeat(3, 1fr)'
+            }`,
+            overflow: 'hidden',
+          }}
+        >
+          <div style={{ gridRow: '1 / span 2', gridColumn: '1 / span 2' }}>
+            <CardNews item={cardNews[0]} />
+          </div>
+          {isHasRow
+            ? cardNews.slice(1, 6).map((item) => {
+                return <CardNews key={item.key + Math.random()} item={item} />;
+              })
+            : cardNews.slice(1, 3).map((item) => {
+                return <CardNews key={item.key + Math.random()} item={item} />;
+              })}
+        </div>
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export const useStyles = createStyles((_theme, params: any) => {
       padding: '0 5vw',
       backgroundColor: params ? 'white' : 'transparent',
       boxShadow: params ? '0 2px 4px 0 rgba(0, 0, 0, 0.1)' : 'none',
-      transition: 'all 0.3s linear',
+      transition: 'all 0.1s ease',
     },
     logo: {
       height: '80px',

@@ -4,6 +4,8 @@ import { useLayoutEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
 import Activity from './Activity/Activity';
+import Contruct from './Contruct/Contruct';
+import FooterSection from './FooterSection/FooterSection';
 import News from './News/News';
 // @ts-ignore
 import PageAble from 'pageable';
@@ -63,17 +65,28 @@ const HomePage = () => {
         <div data-anchor="welcome-section" id="welcome-section">
           <Welcome />
         </div>
-        <div data-anchor="about-us" id="about-us">
+        <div
+          data-anchor="about-us"
+          id="about-us"
+          style={{ background: '#EFEFEF' }}
+        >
           <AboutUs />
         </div>
         <div data-anchor="activity" id="activity">
           <Activity />
         </div>
-        <div data-anchor="news" id="news">
+        <div data-anchor="news" id="news" style={{ background: '#EFEFEF' }}>
           <News />
         </div>
-        <div data-anchor="news22" id="news22">
-          123
+        <div data-anchor="contruct" id="contruct">
+          <Contruct />
+        </div>
+        <div
+          data-anchor="footer-section"
+          id="footer-section"
+          style={{ background: '#898989' }}
+        >
+          <FooterSection />
         </div>
       </div>
     </Box>
