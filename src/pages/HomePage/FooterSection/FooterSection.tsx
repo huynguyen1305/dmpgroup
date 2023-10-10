@@ -7,6 +7,7 @@ import {
   IconMapPinFilled,
   IconPhoneFilled,
 } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
 const FooterSection = () => {
   const isHasRow = useMediaQuery('(min-width: 1400px)');
   return (
@@ -19,7 +20,21 @@ const FooterSection = () => {
           width: '70%',
         }}
       >
-        <h3
+        <motion.h3
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
           style={{
             color: 'white',
             fontSize: '3vw',
@@ -28,9 +43,25 @@ const FooterSection = () => {
           }}
         >
           Thông tin Liên hệ
-        </h3>
+        </motion.h3>
         {/* ============ */}
-        <div style={{ marginTop: '2rem' }}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+          style={{ marginTop: '2rem' }}
+        >
           <div
             style={{
               display: 'flex',
@@ -59,10 +90,25 @@ const FooterSection = () => {
             16A Đường 58, Phường Phước Long A, Thành phố Thủ Đức, Thành phố Hồ
             Chí Minh, Việt Nam
           </div>
-        </div>
+        </motion.div>
         <br />
         {/* ============ */}
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.4 }}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+        >
           <div
             style={{
               display: 'flex',
@@ -91,10 +137,25 @@ const FooterSection = () => {
             36A Nguyễn Gia Trí, Phường 25, Quân Bình Thạnh, Thành phố Hồ Chí
             Minh, Việt Nam
           </div>
-        </div>
+        </motion.div>
         <br />
         {/* ============ */}
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.5 }}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+        >
           <div
             style={{
               display: 'flex',
@@ -122,10 +183,25 @@ const FooterSection = () => {
           >
             Km 1877, Quốc lộ 1K, Dĩ An, Bình Dương, Việt Nam
           </div>
-        </div>
+        </motion.div>
         <br />
         {/* ============ */}
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.6 }}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+        >
           <div
             style={{
               display: 'flex',
@@ -154,10 +230,24 @@ const FooterSection = () => {
             Tầng 5, tòa nhà Dimond, số 1 Hoàng Đạo Thúy, Quận Thanh Xuân,TP Hà
             Nội, Việt Nam
           </div>
-        </div>
+        </motion.div>
         <br />
         {/* ============ */}
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.7 }}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -191,9 +281,23 @@ const FooterSection = () => {
           >
             0287 308 6679
           </a>
-        </div>
+        </motion.div>
         <br />
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.8 }}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -226,12 +330,26 @@ const FooterSection = () => {
           >
             infor@dpmgroup.vn
           </a>
-        </div>
+        </motion.div>
         {isHasRow ? (
           <>
             <br />
             {/* ============ */}
-            <div
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.3, delay: 0.9 }}
+              variants={{
+                hidden: {
+                  x: -100,
+                  opacity: 0,
+                },
+                visible: {
+                  x: 0,
+                  opacity: 1,
+                },
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -265,10 +383,24 @@ const FooterSection = () => {
               >
                 CÔNG TY CỔ PHẦN TẬP ĐOÀN D P M
               </a>
-            </div>
+            </motion.div>
             <br />
             {/* ============ */}
-            <div
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.3, delay: 1 }}
+              variants={{
+                hidden: {
+                  x: -100,
+                  opacity: 0,
+                },
+                visible: {
+                  x: 0,
+                  opacity: 1,
+                },
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -302,7 +434,7 @@ const FooterSection = () => {
               >
                 DPM Group Corporation
               </a>
-            </div>
+            </motion.div>
           </>
         ) : null}
       </div>

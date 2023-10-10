@@ -8,6 +8,8 @@ import banner2 from '@/assets/images/home-banner-2.jpg';
 import banner3 from '@/assets/images/home-banner-3.jpg';
 import banner4 from '@/assets/images/home-banner-4.png';
 
+import { motion } from 'framer-motion';
+
 const News = () => {
   const isHasRow = useMediaQuery('(min-width: 1400px)');
   const cardNews = [
@@ -67,7 +69,21 @@ const News = () => {
       }}
     >
       <div>
-        <h3
+        <motion.h3
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: {
+              y: 100,
+              opacity: 0,
+            },
+            visible: {
+              y: 0,
+              opacity: 1,
+            },
+          }}
           style={{
             width: '100%',
             height: '100%',
@@ -80,7 +96,7 @@ const News = () => {
           }}
         >
           Tin Tức
-        </h3>
+        </motion.h3>
       </div>
       <div
         style={{
@@ -106,15 +122,72 @@ const News = () => {
             overflow: 'hidden',
           }}
         >
-          <div style={{ gridRow: '1 / span 2', gridColumn: '1 / span 2' }}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            variants={{
+              hidden: {
+                x: '-100%',
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+            style={{ gridRow: '1 / span 2', gridColumn: '1 / span 2' }}
+          >
             <CardNews item={cardNews[0]} />
-          </div>
+          </motion.div>
+
           {isHasRow
             ? cardNews.slice(1, 6).map((item) => {
-                return <CardNews key={item.key + Math.random()} item={item} />;
+                return (
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.3, delay: 0.3 }}
+                    variants={{
+                      hidden: {
+                        x: '100%',
+                        opacity: 0,
+                      },
+                      visible: {
+                        x: 0,
+                        opacity: 1,
+                      },
+                    }}
+                    key={item.key + Math.random()}
+                  >
+                    <CardNews item={item} />
+                  </motion.div>
+                );
               })
             : cardNews.slice(1, 3).map((item) => {
-                return <CardNews key={item.key + Math.random()} item={item} />;
+                return (
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.3, delay: 0.3 }}
+                    variants={{
+                      hidden: {
+                        x: '100%',
+                        opacity: 0,
+                      },
+                      visible: {
+                        x: 0,
+                        opacity: 1,
+                      },
+                    }}
+                    key={item.key + Math.random()}
+                  >
+                    <CardNews item={item} />
+                  </motion.div>
+                );
               })}
         </div>
       </div>

@@ -6,6 +6,8 @@ import banner2 from '@/assets/images/home-banner-2.jpg';
 import banner3 from '@/assets/images/home-banner-3.jpg';
 import banner4 from '@/assets/images/home-banner-4.png';
 
+import { motion } from 'framer-motion';
+
 const Activity = () => {
   const [active, setActive] = React.useState('design');
   const { classes } = useStyles(active);
@@ -31,7 +33,24 @@ const Activity = () => {
           textTransform: 'capitalize',
         }}
       >
-        <h3>Lĩnh Vực Hoạt động</h3>
+        <motion.h3
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: {
+              y: 100,
+              opacity: 0,
+            },
+            visible: {
+              y: 0,
+              opacity: 1,
+            },
+          }}
+        >
+          Lĩnh Vực Hoạt động
+        </motion.h3>
       </div>
       <div
         style={{ position: 'absolute', inset: '0', zIndex: '0' }}
@@ -116,7 +135,24 @@ const Activity = () => {
           }}
           onMouseEnter={() => setActive('design')}
         >
-          Công tác thiết kế
+          <motion.span
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.3 }}
+            variants={{
+              hidden: {
+                x: '-100px',
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+          >
+            Công tác thiết kế
+          </motion.span>
         </div>
         <div
           style={{
@@ -134,7 +170,24 @@ const Activity = () => {
           }}
           onMouseEnter={() => setActive('product')}
         >
-          Công tác sản xuất
+          <motion.span
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            variants={{
+              hidden: {
+                x: '-100px',
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+          >
+            Công tác sản xuất
+          </motion.span>
         </div>
         <div
           style={{
@@ -152,7 +205,24 @@ const Activity = () => {
           }}
           onMouseEnter={() => setActive('logistic')}
         >
-          Công tác vận chuyển
+          <motion.span
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            variants={{
+              hidden: {
+                x: '-100px',
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+          >
+            Công tác vận chuyển
+          </motion.span>
         </div>
         <div
           style={{
@@ -170,7 +240,24 @@ const Activity = () => {
           }}
           onMouseEnter={() => setActive('setup')}
         >
-          Công tác lắp đặt
+          <motion.span
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            variants={{
+              hidden: {
+                x: '-100px',
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+          >
+            Công tác lắp đặt
+          </motion.span>
         </div>
       </div>
     </section>

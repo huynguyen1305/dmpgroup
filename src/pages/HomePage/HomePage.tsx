@@ -1,5 +1,5 @@
 import { Box } from '@mantine/core';
-import useIsBigScreen from '../../hooks/useIsBigScreen';
+
 import { useLayoutEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
@@ -12,8 +12,6 @@ import PageAble from 'pageable';
 import useAppStore from '@/store/appStore';
 
 const HomePage = () => {
-  const isDesktop = useIsBigScreen();
-  console.log('isDesktop', isDesktop);
   const pageAbleRef = useRef(null);
   const { setHomePageScroll } = useAppStore();
 

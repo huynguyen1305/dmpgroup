@@ -141,3 +141,9 @@ h6 {
 .pg-pips {
   transition: all 0.3 linear;
 }
+
+.slideOut {
+  transform: translateY(-100%);
+  transition: all 0.5s ease;
+  visibility: hidden;
+}

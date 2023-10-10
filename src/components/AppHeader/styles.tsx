@@ -3,7 +3,6 @@ import { createStyles } from '@mantine/core';
 // default 5vw
 
 export const useStyles = createStyles((_theme, params: any) => {
-  console.log(params);
   return {
     wrapper: {
       position: 'fixed',

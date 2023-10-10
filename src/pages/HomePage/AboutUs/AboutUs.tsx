@@ -19,6 +19,7 @@ import customer7 from '@/assets/images/Clients-18-300x205.png';
 import customer8 from '@/assets/images/Clients-09-300x205.png';
 import customer9 from '@/assets/images/Clients-01-300x205.png';
 import customer10 from '@/assets/images/Clients-04-300x205.png';
+import { motion } from 'framer-motion';
 
 const AboutUs = () => {
   return (
@@ -39,10 +40,25 @@ const AboutUs = () => {
           alignItems: 'center',
         }}
       >
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: {
+              x: '-100px',
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
           style={{
             width: '50%',
             height: '100%',
+            overflow: 'hidden',
           }}
         >
           <Swiper
@@ -53,6 +69,7 @@ const AboutUs = () => {
               delay: 3000,
               disableOnInteraction: false,
             }}
+            navigation={true}
             effect={'fade'}
             modules={[Autoplay, Navigation]}
             style={{
@@ -82,7 +99,7 @@ const AboutUs = () => {
               />
             </SwiperSlide>
           </Swiper>
-        </div>
+        </motion.div>
         <div
           style={{
             width: '50%',
@@ -105,7 +122,21 @@ const AboutUs = () => {
               padding: '0 3rem',
             }}
           >
-            <h2
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: {
+                  y: '100px',
+                  opacity: 0,
+                },
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                },
+              }}
               style={{
                 fontSize: '3vw',
                 fontWeight: '500',
@@ -113,8 +144,24 @@ const AboutUs = () => {
               }}
             >
               Về Chúng tôi
-            </h2>
-            <p style={{ color: '#262626' }}>
+            </motion.h2>
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              variants={{
+                hidden: {
+                  y: '50px',
+                  opacity: 0,
+                },
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                },
+              }}
+              style={{ color: '#262626' }}
+            >
               Từ ngày thành lập 2010 và phát triển đến nay, DPM đã vượt qua hàng
               ngàn thách thức, khắc phục mọi khó khăn để khẳng định mình là một
               trong những nhà sản xuất và lắp ghép các sản phẩm bê tông dự ứng
@@ -127,11 +174,27 @@ const AboutUs = () => {
               thành. Chân thành cảm ơn sự tin tưởng và ủng hộ từ phía đối tác,
               khách hàng, và cộng đồng. Hãy cùng chúng tôi tiến bước vào những
               hành trình xây dựng tương lai thịnh vượng và bền vững
-            </p>
-            <div className={styles.buttonMore}>
+            </motion.p>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              variants={{
+                hidden: {
+                  y: '50px',
+                  opacity: 0,
+                },
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                },
+              }}
+              className={styles.buttonMore}
+            >
               <IconArrowBarToRight />
               <Link to="/gioi-thieu">Xem thêm</Link>
-            </div>
+            </motion.div>
           </div>
           <div
             style={{
