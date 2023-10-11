@@ -24,7 +24,7 @@ const FooterSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          transition={{ duration: 0.3, delay: 0.1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           variants={{
             hidden: {
               x: -100,
@@ -97,7 +97,7 @@ const FooterSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          transition={{ duration: 0.3, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           variants={{
             hidden: {
               x: -100,
@@ -144,7 +144,7 @@ const FooterSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          transition={{ duration: 0.3, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           variants={{
             hidden: {
               x: -100,
@@ -190,7 +190,7 @@ const FooterSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          transition={{ duration: 0.3, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           variants={{
             hidden: {
               x: -100,
@@ -237,7 +237,7 @@ const FooterSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          transition={{ duration: 0.3, delay: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
           variants={{
             hidden: {
               x: -100,
@@ -287,7 +287,7 @@ const FooterSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          transition={{ duration: 0.3, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
           variants={{
             hidden: {
               x: -100,
@@ -339,7 +339,7 @@ const FooterSection = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
-              transition={{ duration: 0.3, delay: 0.9 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
               variants={{
                 hidden: {
                   x: -100,
@@ -390,7 +390,7 @@ const FooterSection = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
-              transition={{ duration: 0.3, delay: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
               variants={{
                 hidden: {
                   x: -100,

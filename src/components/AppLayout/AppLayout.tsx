@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import AppHeader from '../AppHeader/AppHeader';
 import useAppStore from '@/store/appStore';
 import { useLayoutEffect, useRef } from 'react';
-// import bgVideo from '@/assets/images/logo_nobg_com.mp4';
+import bgVideo from '@/assets/images/logo_nobg_com.mp4';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -26,7 +26,7 @@ const AppLayout = () => {
   }, []);
   return (
     <>
-      {/* <div
+      <div
         ref={videoContainerRef}
         style={{
           width: '100%',
@@ -51,7 +51,7 @@ const AppLayout = () => {
         >
           <source src={bgVideo} type="video/mp4" />
         </video>
-      </div> */}
+      </div>
       <AppHeader />
       <main style={{ minHeight: '100vh' }}>
         <Outlet />

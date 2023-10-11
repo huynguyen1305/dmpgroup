@@ -149,7 +149,7 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.25 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               variants={{
                 hidden: {
                   y: '50px',
@@ -179,7 +179,7 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.25 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               variants={{
                 hidden: {
                   y: '50px',

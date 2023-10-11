@@ -139,7 +139,7 @@ const Activity = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             variants={{
               hidden: {
                 x: '-100px',
@@ -174,7 +174,7 @@ const Activity = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
-            transition={{ duration: 0.3, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             variants={{
               hidden: {
                 x: '-100px',
@@ -209,7 +209,7 @@ const Activity = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
-            transition={{ duration: 0.3, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             variants={{
               hidden: {
                 x: '-100px',
@@ -244,7 +244,7 @@ const Activity = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             variants={{
               hidden: {
                 x: '-100px',

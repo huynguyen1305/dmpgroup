@@ -126,7 +126,7 @@ const News = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             variants={{
               hidden: {
                 x: '-100%',
@@ -149,7 +149,7 @@ const News = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: false }}
-                    transition={{ duration: 0.3, delay: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                     variants={{
                       hidden: {
                         x: '100%',
@@ -172,7 +172,7 @@ const News = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: false }}
-                    transition={{ duration: 0.3, delay: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                     variants={{
                       hidden: {
                         x: '100%',

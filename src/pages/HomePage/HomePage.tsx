@@ -32,9 +32,9 @@ const HomePage = () => {
         },
       });
       var lethargy = new Lethargy({
-        sensitivity: 2,
-        delay: 800,
-        inertiaDecay: 50,
+        sensitivity: 90,
+        delay: 600,
+        inertiaDecay: 60,
       });
       function fpScroll(e: any) {
         e.preventDefault();
@@ -42,8 +42,8 @@ const HomePage = () => {
 
         const check = lethargy.check(e).toString();
         // @ts-ignore
-        const tmp = lethargy.previousEvents[0].deltaY;
-        console.log(check);
+        const tmp = lethargy?.previousEvents[0]?.deltaY;
+
         if (check === 'true') {
           if (tmp < 0) {
             pageAble.prev();
