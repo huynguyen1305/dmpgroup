@@ -33,8 +33,8 @@ const HomePage = () => {
       });
       var lethargy = new Lethargy({
         sensitivity: 2,
-        delay: 700,
-        inertiaDecay: 100,
+        delay: 800,
+        inertiaDecay: 200,
       });
       function fpScroll(e: any) {
         e.preventDefault();
