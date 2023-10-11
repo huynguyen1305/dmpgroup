@@ -17,7 +17,7 @@ const HomePage = () => {
   const containerPageRef = useRef(null);
 
   useLayoutEffect(() => {
-    if (window) {
+    if (document) {
       const pageAble = new PageAble(containerPageRef.current, {
         pips: true,
         animation: 700,
@@ -27,8 +27,8 @@ const HomePage = () => {
         events: {
           wheel: false, // enable / disable mousewheel scrolling
           mouse: false, // enable / disable mouse drag scrolling
-          touch: false, // enable / disable touch / swipe scrolling
-          keydown: false, // enable / disable keyboard navigation
+          touch: true, // enable / disable touch / swipe scrolling
+          keydown: true, // enable / disable keyboard navigation
         },
       });
       const lethargy = new Lethargy.Lethargy();
@@ -37,26 +37,28 @@ const HomePage = () => {
         e.stopPropagation();
 
         const check = lethargy.check(e).toString();
-
+        console.log(check);
         if (check !== 'false') {
           if (check === '-1') {
+            console.log('next', check);
             pageAble.next();
           } else if (check === '1') {
+            console.log('prev', check);
             pageAble.prev();
           }
         }
       }
 
-      window.addEventListener('mousewheel', fpScroll, {
+      document.addEventListener('mousewheel', fpScroll, {
         passive: false,
       });
-      window.addEventListener('DOMMouseScroll', fpScroll, {
+      document.addEventListener('DOMMouseScroll', fpScroll, {
         passive: false,
       });
-      window.addEventListener('wheel', fpScroll, {
+      document.addEventListener('wheel', fpScroll, {
         passive: false,
       });
-      window.addEventListener('MozMousePixelScroll', fpScroll, {
+      document.addEventListener('MozMousePixelScroll', fpScroll, {
         passive: false,
       });
 
