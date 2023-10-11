@@ -1,6 +1,6 @@
 import { Box } from '@mantine/core';
 
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
 import Activity from './Activity/Activity';
@@ -13,72 +13,55 @@ import PageAble from 'pageable';
 import Lethargy from 'lethargy';
 
 const HomePage = () => {
-  // const pageAbleRef = useRef(null);
+  const pageAbleRef = useRef(null);
   const containerPageRef = useRef(null);
-  // const { setHomePageScroll } = useAppStore();
 
-  const loadPageAble = async () => {
-    // @ts-ignore
-    const Pageable = (await import('pageable')).default;
-    const pageAble = new Pageable(containerPageRef.current, {
-      pips: true,
-      animation: 500,
-      delay: 100,
-      throttle: 200,
-      swipeThreshold: 200,
-      orientation: 'vertical',
+  useLayoutEffect(() => {
+    if (window) {
+      const pageAble = new PageAble(containerPageRef.current, {
+        pips: true,
+        animation: 700,
+        delay: 100,
+        orientation: 'vertical',
+        infinite: false,
+        events: {
+          wheel: false, // enable / disable mousewheel scrolling
+          mouse: false, // enable / disable mouse drag scrolling
+          touch: false, // enable / disable touch / swipe scrolling
+          keydown: false, // enable / disable keyboard navigation
+        },
+      });
+      const lethargy = new Lethargy.Lethargy();
+      function fpScroll(e: any) {
+        e.preventDefault();
+        e.stopPropagation();
 
-      infinite: false,
+        const check = lethargy.check(e).toString();
 
-      events: {
-        wheel: true, // enable / disable mousewheel scrolling
-        mouse: false, // enable / disable mouse drag scrolling
-        touch: false, // enable / disable touch / swipe scrolling
-        keydown: false, // enable / disable keyboard navigation
-      },
-      easing: function (
-        currentTime: number,
-        startPos: number,
-        endPos: number,
-        interval: number
-      ) {
-        // the easing function used for the scroll animation
-        return (
-          -endPos * (currentTime /= interval) * (currentTime - 2) + startPos
-        );
-      },
-    });
-    const lethargy = new Lethargy.Lethargy();
-    function fpScroll(e: any) {
-      console.log('runnnnnnnnn', lethargy.check(e), pageAble);
-      e.preventDefault();
-      e.stopPropagation();
-      if (lethargy.check(e) !== false) {
-        if (lethargy.check(e) == 1) {
-          pageAble.prev();
-        } else if (lethargy.check(e) == -1) {
-          pageAble.next();
+        if (check !== 'false') {
+          if (check === '-1') {
+            pageAble.next();
+          } else if (check === '1') {
+            pageAble.prev();
+          }
         }
       }
-    }
-    document.addEventListener('mousewheel', fpScroll, {
-      passive: false,
-    });
-    document.addEventListener('DOMMouseScroll', fpScroll, {
-      passive: false,
-    });
-    document.addEventListener('wheel', fpScroll, {
-      passive: false,
-    });
-    document.addEventListener('MozMousePixelScroll', fpScroll, {
-      passive: false,
-    });
-  };
 
-  useEffect(() => {
-    loadPageAble();
-    // pageAbleRef.current = pageAble;
-    // setHomePageScroll && setHomePageScroll(pageAble);
+      window.addEventListener('mousewheel', fpScroll, {
+        passive: false,
+      });
+      window.addEventListener('DOMMouseScroll', fpScroll, {
+        passive: false,
+      });
+      window.addEventListener('wheel', fpScroll, {
+        passive: false,
+      });
+      window.addEventListener('MozMousePixelScroll', fpScroll, {
+        passive: false,
+      });
+
+      pageAbleRef.current = pageAble;
+    }
   }, []);
 
   return (
