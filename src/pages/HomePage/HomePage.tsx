@@ -20,7 +20,7 @@ const HomePage = () => {
     if (document) {
       const pageAble = new PageAble(containerPageRef.current, {
         pips: true,
-        animation: 700,
+        animation: 1000,
         delay: 100,
         orientation: 'vertical',
         infinite: false,
@@ -32,8 +32,8 @@ const HomePage = () => {
         },
       });
       var lethargy = new Lethargy({
-        sensitivity: 7,
-        delay: 100,
+        sensitivity: 2,
+        delay: 700,
         inertiaDecay: 100,
       });
       function fpScroll(e: any) {
@@ -43,13 +43,11 @@ const HomePage = () => {
         const check = lethargy.check(e).toString();
         // @ts-ignore
         const tmp = lethargy.previousEvents[0].deltaY;
-        console.log(check, tmp);
-        if (check !== 'false') {
+        console.log(check);
+        if (check === 'true') {
           if (tmp < 0) {
-            console.log('next', check);
             pageAble.prev();
           } else if (tmp > 0) {
-            console.log('prev', check);
             pageAble.next();
           }
         }
