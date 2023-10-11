@@ -22,6 +22,7 @@
     "gsap": "^3.12.2",
     "immer": "^10.0.3",
     "lethargy": "^1.0.9",
+    "lethargy-ts": "^0.0.5",
     "pageable": "^0.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

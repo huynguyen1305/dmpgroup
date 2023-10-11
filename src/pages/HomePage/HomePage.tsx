@@ -10,7 +10,7 @@ import News from './News/News';
 // @ts-ignore
 import PageAble from 'pageable';
 // import useAppStore from '@/store/appStore';
-import Lethargy from 'lethargy';
+import { Lethargy } from 'lethargy-ts';
 
 const HomePage = () => {
   const pageAbleRef = useRef(null);
@@ -31,20 +31,26 @@ const HomePage = () => {
           keydown: true, // enable / disable keyboard navigation
         },
       });
-      const lethargy = new Lethargy.Lethargy();
+      var lethargy = new Lethargy({
+        sensitivity: 7,
+        delay: 100,
+        inertiaDecay: 100,
+      });
       function fpScroll(e: any) {
         e.preventDefault();
         e.stopPropagation();
 
         const check = lethargy.check(e).toString();
-        console.log(check);
+        // @ts-ignore
+        const tmp = lethargy.previousEvents[0].deltaY;
+        console.log(check, tmp);
         if (check !== 'false') {
-          if (check === '-1') {
+          if (tmp < 0) {
             console.log('next', check);
-            pageAble.next();
-          } else if (check === '1') {
-            console.log('prev', check);
             pageAble.prev();
+          } else if (tmp > 0) {
+            console.log('prev', check);
+            pageAble.next();
           }
         }
       }

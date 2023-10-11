@@ -2624,6 +2624,11 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+lethargy-ts@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/lethargy-ts/-/lethargy-ts-0.0.5.tgz#a6eeded9e028f4400b425c5d87e9650cc7668799"
+  integrity sha512-zgtxmwztrhTjiWOsNWM8vvI/UodRfzLb86F+mah9paNGngM+mlbZqiT5DIOQ6DwbZn+uVy5v6BYUHbhn+ThlbA==
+
 lethargy@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/lethargy/-/lethargy-1.0.9.tgz#138b0ae384d015c5233e0cc1eeba4d089af3c58b"
