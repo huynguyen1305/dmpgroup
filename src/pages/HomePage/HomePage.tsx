@@ -1,6 +1,6 @@
 import { Box } from '@mantine/core';
 
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
 import Activity from './Activity/Activity';
@@ -9,30 +9,32 @@ import FooterSection from './FooterSection/FooterSection';
 import News from './News/News';
 // @ts-ignore
 import PageAble from 'pageable';
-import useAppStore from '@/store/appStore';
+// import useAppStore from '@/store/appStore';
+import Lethargy from 'lethargy';
 
 const HomePage = () => {
-  const pageAbleRef = useRef(null);
-  const { setHomePageScroll } = useAppStore();
+  // const pageAbleRef = useRef(null);
+  const containerPageRef = useRef(null);
+  // const { setHomePageScroll } = useAppStore();
 
-  useLayoutEffect(() => {
-    const pageAble = new PageAble('#containerPage', {
+  const loadPageAble = async () => {
+    // @ts-ignore
+    const Pageable = (await import('pageable')).default;
+    const pageAble = new Pageable(containerPageRef.current, {
       pips: true,
       animation: 500,
       delay: 100,
-      throttle: 50,
+      throttle: 200,
+      swipeThreshold: 200,
       orientation: 'vertical',
-      swipeThreshold: 50,
-      freeScroll: false,
-      navPrevEl: true,
-      navNextEl: true,
+
       infinite: false,
 
       events: {
         wheel: true, // enable / disable mousewheel scrolling
         mouse: false, // enable / disable mouse drag scrolling
         touch: false, // enable / disable touch / swipe scrolling
-        keydown: true, // enable / disable keyboard navigation
+        keydown: false, // enable / disable keyboard navigation
       },
       easing: function (
         currentTime: number,
@@ -46,8 +48,37 @@ const HomePage = () => {
         );
       },
     });
-    pageAbleRef.current = pageAble;
-    setHomePageScroll && setHomePageScroll(pageAble);
+    const lethargy = new Lethargy.Lethargy();
+    function fpScroll(e: any) {
+      console.log('runnnnnnnnn', lethargy.check(e), pageAble);
+      e.preventDefault();
+      e.stopPropagation();
+      if (lethargy.check(e) !== false) {
+        if (lethargy.check(e) == 1) {
+          pageAble.prev();
+        } else if (lethargy.check(e) == -1) {
+          pageAble.next();
+        }
+      }
+    }
+    document.addEventListener('mousewheel', fpScroll, {
+      passive: false,
+    });
+    document.addEventListener('DOMMouseScroll', fpScroll, {
+      passive: false,
+    });
+    document.addEventListener('wheel', fpScroll, {
+      passive: false,
+    });
+    document.addEventListener('MozMousePixelScroll', fpScroll, {
+      passive: false,
+    });
+  };
+
+  useEffect(() => {
+    loadPageAble();
+    // pageAbleRef.current = pageAble;
+    // setHomePageScroll && setHomePageScroll(pageAble);
   }, []);
 
   return (
@@ -59,7 +90,7 @@ const HomePage = () => {
         },
       }}
     >
-      <div id="containerPage">
+      <div id="containerPage" ref={containerPageRef}>
         <div data-anchor="welcome-section" id="welcome-section">
           <Welcome />
         </div>

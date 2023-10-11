@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import AppHeader from '../AppHeader/AppHeader';
 import useAppStore from '@/store/appStore';
 import { useLayoutEffect, useRef } from 'react';
-import bgVideo from '@/assets/images/logo_nobg.mp4';
+// import bgVideo from '@/assets/images/logo_nobg.mp4';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -25,7 +25,7 @@ const AppLayout = () => {
   }, []);
   return (
     <>
-      <div
+      {/* <div
         ref={videoContainerRef}
         style={{
           width: '100%',
@@ -34,17 +34,19 @@ const AppLayout = () => {
           position: 'fixed',
           inset: '0',
           zIndex: 100000,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <video autoPlay muted loop id="bgVideo" ref={videoRef}>
           <source src={bgVideo} type="video/mp4" />
         </video>
-      </div>
+      </div> */}
       <AppHeader />
       <main style={{ minHeight: '100vh' }}>
         <Outlet />
       </main>
-      <div style={{ padding: '3rem' }}>aaaaaaaaaa</div>
     </>
   );
 };
