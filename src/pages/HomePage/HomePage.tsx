@@ -34,7 +34,7 @@ const HomePage = () => {
       var lethargy = new Lethargy({
         sensitivity: 2,
         delay: 800,
-        inertiaDecay: 200,
+        inertiaDecay: 50,
       });
       function fpScroll(e: any) {
         e.preventDefault();
