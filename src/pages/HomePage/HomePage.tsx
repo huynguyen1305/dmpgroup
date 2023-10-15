@@ -6,6 +6,7 @@ import AboutUs from './AboutUs/AboutUs';
 import Activity from './Activity/Activity';
 import Contruct from './Contruct/Contruct';
 import FooterSection from './FooterSection/FooterSection';
+
 import News from './News/News';
 // @ts-ignore
 import PageAble from 'pageable';
@@ -99,11 +100,7 @@ const HomePage = () => {
         <div data-anchor="contruct" id="contruct">
           <Contruct />
         </div>
-        <div
-          data-anchor="footer-section"
-          id="footer-section"
-          style={{ background: '#898989' }}
-        >
+        <div data-anchor="footer-section" id="footer-section">
           <FooterSection />
         </div>
       </div>

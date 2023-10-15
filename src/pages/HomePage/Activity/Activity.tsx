@@ -1,10 +1,10 @@
 import React from 'react';
 import { useStyles } from './styles';
 
-import banner1 from '@/assets/images/home-banner-1.jpg';
-import banner2 from '@/assets/images/home-banner-2.jpg';
-import banner3 from '@/assets/images/home-banner-3.jpg';
-import banner4 from '@/assets/images/home-banner-4.png';
+import banner1 from '@/assets/images/thiet-ke.jpg';
+import banner2 from '@/assets/images/san-xuat.jpg';
+import banner3 from '@/assets/images/van-chuyen.jpg';
+import banner4 from '@/assets/images/lap-dat.jpg';
 
 import { motion } from 'framer-motion';
 
@@ -31,6 +31,7 @@ const Activity = () => {
           fontSize: '3vw',
           fontWeight: '500',
           textTransform: 'capitalize',
+          textAlign: 'center',
         }}
       >
         <motion.h3
@@ -49,7 +50,7 @@ const Activity = () => {
             },
           }}
         >
-          Lĩnh Vực Hoạt động
+          Lĩnh Vực <br /> Hoạt động
         </motion.h3>
       </div>
       <div
@@ -129,7 +130,7 @@ const Activity = () => {
             justifyContent: 'center',
             alignItems: 'center',
             color: 'white',
-            fontSize: '1.5rem',
+            fontSize: '2vw',
             fontWeight: active === 'design' ? '600' : 'normal',
             opacity: active === 'design' ? 1 : 0.7,
           }}
@@ -164,7 +165,7 @@ const Activity = () => {
             justifyContent: 'center',
             alignItems: 'center',
             color: 'white',
-            fontSize: '1.5rem',
+            fontSize: '2vw',
             fontWeight: active === 'product' ? '600' : 'normal',
             opacity: active === 'product' ? 1 : 0.7,
           }}
@@ -199,7 +200,7 @@ const Activity = () => {
             justifyContent: 'center',
             alignItems: 'center',
             color: 'white',
-            fontSize: '1.5rem',
+            fontSize: '2vw',
             fontWeight: active === 'logistic' ? '600' : 'normal',
             opacity: active === 'logistic' ? 1 : 0.7,
           }}
@@ -234,7 +235,7 @@ const Activity = () => {
             justifyContent: 'center',
             alignItems: 'center',
             color: 'white',
-            fontSize: '1.5rem',
+            fontSize: '2vw',
             fontWeight: active === 'setup' ? '600' : 'normal',
             opacity: active === 'setup' ? 1 : 0.7,
           }}

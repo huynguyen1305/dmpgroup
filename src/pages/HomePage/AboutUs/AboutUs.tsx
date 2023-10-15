@@ -1,38 +1,144 @@
-import image1 from '@/assets/images/about-us-1.jpg';
-import image2 from '@/assets/images/about-us-2.jpg';
-
 import styles from './AboutUs.module.scss';
 import { Link } from 'react-router-dom';
 
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { SwiperSlide, Swiper } from 'swiper/react';
 
-import { IconArrowBarToRight } from '@tabler/icons-react';
-
-import customer1 from '@/assets/images/Clients-06-300x205.png';
-import customer2 from '@/assets/images/Clients-24-300x205.png';
-import customer3 from '@/assets/images/Clients-23-300x205.png';
-import customer4 from '@/assets/images/Clients-22-300x205.png';
-import customer5 from '@/assets/images/Clients-21-300x205.png';
-import customer6 from '@/assets/images/Clients-20-300x205.png';
-import customer7 from '@/assets/images/Clients-18-300x205.png';
-import customer8 from '@/assets/images/Clients-09-300x205.png';
-import customer9 from '@/assets/images/Clients-01-300x205.png';
-import customer10 from '@/assets/images/Clients-04-300x205.png';
+import looper from '@/assets/images/looper2.mp4';
 import { motion } from 'framer-motion';
+import { useLayoutEffect, useRef } from 'react';
+
+const imageLists = [
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/Thien-An.jpg',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/TVS.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/ATAD.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/BMB.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/Dai-dung.jpg',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/bt6-1.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/CC1.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/Coteccons_Logo.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/logo_hoa_phat_moi_JJUT.jpg',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/Logo_ricons_slogan.jpg',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/MGD-n.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/MHT.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/NPH.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/Printing-Newtecons-Horizontal-Slogan-1536x1086.jpg',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/Sol.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/Tuan-Le.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/VAS.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/xuan-mai-corp-logo.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/08/ATC.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/Hoa-Binh.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/Kajima.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/LOGO-QUANG-MINH-STEEL-METAL.jpg',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/Logo-Phan-Vu-Group.webp',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/obayashi.png',
+  },
+  {
+    image:
+      'https://dpmgroup.123websitedev.com/wp-content/uploads/2023/09/shimizu-corporation-vector-logo-small.png',
+  },
+];
 
 const AboutUs = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useLayoutEffect(() => {
+    if (videoRef.current) {
+      // videoRef.current.style
+      videoRef.current.muted = true;
+      videoRef.current.loop = true;
+      videoRef.current.controls = false;
+
+      videoRef.current.playbackRate = 0.88;
+      videoRef.current.play();
+    }
+  }, []);
   return (
     <section
       style={{
         position: 'relative',
         width: '100%',
         height: '100%',
+        overflow: 'hidden',
       }}
       className={styles.aboutUs}
     >
       <div
         style={{
+          position: 'absolute',
+          inset: '0',
+          zIndex: 1,
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -59,56 +165,40 @@ const AboutUs = () => {
             width: '50%',
             height: '100%',
             overflow: 'hidden',
+            // background: 'red',
+            // opacity: 0.5,
           }}
         >
-          <Swiper
-            grabCursor
-            centeredSlides={true}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            navigation={true}
-            effect={'fade'}
-            modules={[Autoplay, Navigation]}
-            style={{
-              width: '100%',
-              height: '100%',
-              cursor: 'grab',
-            }}
-          >
-            <SwiperSlide>
-              <img
-                src={image1}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={image2}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-            </SwiperSlide>
-          </Swiper>
+          <div style={{ width: '100%', height: '100%' }}>
+            <video
+              autoPlay
+              muted
+              loop
+              controls={false}
+              id="bgVideo"
+              ref={videoRef}
+              preload={'auto'}
+              style={{
+                width: '100%',
+                height: '100%',
+                transform: 'scale(2.5)',
+                background: '#EFEFEF',
+              }}
+            >
+              <source src={looper} type="video/mp4" />
+            </video>
+          </div>
         </motion.div>
         <div
           style={{
             width: '50%',
             height: '100%',
-            marginTop: '100px',
+
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'space-around',
+            // background: 'red',
           }}
         >
           <div
@@ -119,7 +209,8 @@ const AboutUs = () => {
               alignItems: 'flex-start',
               justifyContent: 'center',
               width: '100%',
-              padding: '0 3rem',
+              padding: '80px 160px 80px 80px',
+              background: '#EFEFEF',
             }}
           >
             <motion.h2
@@ -160,7 +251,7 @@ const AboutUs = () => {
                   opacity: 1,
                 },
               }}
-              style={{ color: '#262626' }}
+              style={{ color: '#262626', fontSize: '1vw' }}
             >
               Từ ngày thành lập 2010 và phát triển đến nay, DPM đã vượt qua hàng
               ngàn thách thức, khắc phục mọi khó khăn để khẳng định mình là một
@@ -192,145 +283,87 @@ const AboutUs = () => {
               }}
               className={styles.buttonMore}
             >
-              <IconArrowBarToRight />
-              <Link to="/gioi-thieu">Xem thêm</Link>
+              {/* <IconArrowBarToRight /> */}
+              <Link
+                to="/gioi-thieu"
+                style={{
+                  textDecoration: 'none',
+                  color: 'white',
+                  padding: '8px 1vw',
+                  backgroundColor: 'black',
+                  borderRadius: '4px',
+                  fontSize: '1vw',
+                  border: '4px solid white',
+                }}
+              >
+                Xem thêm
+              </Link>
             </motion.div>
           </div>
-          <div
-            style={{
-              width: '100%',
-              flexShrink: 0,
-              height: '30%',
-            }}
-          >
-            <div
-              style={{
-                padding: '0 3rem',
-                textTransform: 'capitalize',
-                fontSize: '1.5rem',
-                fontWeight: '600',
-              }}
-            >
-              khách hàng & đối tác
-            </div>
-            <Swiper
-              autoplay={{
-                delay: 60,
-                disableOnInteraction: false,
-              }}
-              slidesPerView={3}
-              navigation={{
-                enabled: true,
-              }}
-              speed={2000}
-              loop
-              freeMode
-              modules={[Autoplay, Navigation]}
-              grabCursor
-            >
-              <SwiperSlide>
-                <img
-                  src={customer1}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer2}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer3}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer4}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer5}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer6}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer7}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer8}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer9}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={customer10}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </SwiperSlide>
-            </Swiper>
-          </div>
+          <div></div>
         </div>
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          bottom: 0,
+          zIndex: 2,
+          width: '100%',
+          height: '100px',
+          display: 'flex',
+          background: 'white',
+          // justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <div
+          style={{
+            padding: '0 3rem',
+            textTransform: 'capitalize',
+            fontSize: '1.5rem',
+            fontWeight: '600',
+            borderRight: '1px solid black',
+            flexShrink: 0,
+          }}
+        >
+          khách hàng & đối tác
+        </div>
+        <Swiper
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          speed={2000}
+          loop
+          modules={[Autoplay]}
+          slidesPerView={5}
+          // grabCursor
+          style={{
+            height: '100px',
+            position: 'relative',
+            userSelect: 'none',
+            padding: '16px',
+          }}
+          onSwiper={(swiper: any) => {
+            console.log(swiper.slidesEl);
+            swiper.slidesEl.style.transitionTimingFunction = 'linear';
+          }}
+        >
+          {imageLists.map((item) => (
+            <SwiperSlide key={item.image}>
+              <img
+                src={item.image}
+                alt="logo"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );

@@ -17,11 +17,21 @@ const AppLayout = () => {
     if (videoContainerRef.current && videoRef.current) {
       videoRef.current.playbackRate = 1.2;
       videoRef.current.play();
-      setTimeout(() => {
-        // videoRef.current.stop();
-        videoContainerRef.current?.classList.add('slideOut');
-        setFirstLoad && setFirstLoad(false);
-      }, 8000);
+
+      videoRef.current.addEventListener(
+        'ended',
+        () => {
+          console.log('aaaaaaa');
+          videoContainerRef.current?.classList.add('slideOut');
+          setFirstLoad && setFirstLoad(false);
+        },
+        false
+      );
+      // setTimeout(() => {
+      //   // videoRef.current.stop();
+      //   videoContainerRef.current?.classList.add('slideOut');
+      //   setFirstLoad && setFirstLoad(false);
+      // }, 7000);
     }
   }, []);
   return (
@@ -43,7 +53,6 @@ const AppLayout = () => {
         <video
           autoPlay
           muted
-          loop
           controls={false}
           id="bgVideo"
           ref={videoRef}

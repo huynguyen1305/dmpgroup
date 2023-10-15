@@ -1,12 +1,12 @@
 import { useMediaQuery } from '@mantine/hooks';
 import CardNews from './CardNews/CardNews';
 
-import customer1 from '@/assets/images/Clients-06-300x205.png';
-import bannerMedal from '@/assets/images/home-banner-medal.jpg';
-import banner1 from '@/assets/images/home-banner-1.jpg';
-import banner2 from '@/assets/images/home-banner-2.jpg';
-import banner3 from '@/assets/images/home-banner-3.jpg';
-import banner4 from '@/assets/images/home-banner-4.png';
+import customer1 from '@/assets/images/tin-tuc-6.jpg';
+import bannerMedal from '@/assets/images/tin-tuc-1.jpg';
+import banner1 from '@/assets/images/tin-tuc-4.jpg';
+import banner2 from '@/assets/images/tin-tuc-2.jpg';
+import banner3 from '@/assets/images/tin-tuc-3.jpg';
+import banner4 from '@/assets/images/tin-tuc-7.jpg';
 
 import { motion } from 'framer-motion';
 
@@ -15,7 +15,7 @@ const News = () => {
   const cardNews = [
     {
       key: 1,
-      title: 'Tin tức 1 Tin tức 1 Tin tức 1 Tin tức 1 Tin tức 1',
+      title: 'Tin tức 1 ',
       content: 'Nội dung tin tức 1',
       img: banner1,
       createAt: new Date(),
@@ -68,7 +68,13 @@ const News = () => {
         flexDirection: 'column',
       }}
     >
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
         <motion.h3
           initial="hidden"
           whileInView="visible"
@@ -97,6 +103,21 @@ const News = () => {
         >
           Tin Tức
         </motion.h3>
+        <div
+          style={{
+            flexShrink: '0',
+            textDecoration: 'none',
+            color: 'white',
+            padding: '8px 1vw',
+            backgroundColor: 'black',
+            borderRadius: '4px',
+            fontSize: '1vw',
+            border: '4px solid white',
+            cursor: 'pointer',
+          }}
+        >
+          Xem thêm
+        </div>
       </div>
       <div
         style={{

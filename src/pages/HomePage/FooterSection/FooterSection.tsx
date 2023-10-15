@@ -1,4 +1,4 @@
-import footerMap from '@/assets/images/footer-map.png';
+import footerMap from '@/assets/images/logo-dmp.png';
 import { useMediaQuery } from '@mantine/hooks';
 import {
   IconBrandFacebookFilled,
@@ -8,16 +8,30 @@ import {
   IconPhoneFilled,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
+import footerImg from '@/assets/images/7.jpg';
 const FooterSection = () => {
   const isHasRow = useMediaQuery('(min-width: 1400px)');
   return (
     <section
-      style={{ width: '100%', height: '100%', display: 'flex', color: 'white' }}
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        backgroundImage: `url(${footerImg})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        overflow: 'hidden',
+      }}
     >
       <div
         style={{
-          padding: '100px 1rem 100px 100px',
-          width: '70%',
+          padding: '130px 1vw 100px 100px',
+          width: '80%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          // alignItems: 'center',
         }}
       >
         <motion.h3
@@ -36,7 +50,7 @@ const FooterSection = () => {
             },
           }}
           style={{
-            color: 'white',
+            color: 'black',
             fontSize: '3vw',
             fontWeight: '700',
             textTransform: 'uppercase',
@@ -66,7 +80,7 @@ const FooterSection = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              fontSize: '1.25rem',
+              fontSize: '1.25vw',
             }}
           >
             <IconMapPinFilled />
@@ -77,13 +91,13 @@ const FooterSection = () => {
                 fontWeight: 'bold',
               }}
             >
-              Trụ sở:
+              Địa chỉ:
             </span>
           </div>
           <div
             style={{
               textTransform: 'capitalize',
-              fontSize: '1rem',
+              fontSize: '1vw',
               fontWeight: '400',
             }}
           >
@@ -113,7 +127,7 @@ const FooterSection = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              fontSize: '1.25rem',
+              fontSize: '1.25vw',
             }}
           >
             <IconMapPinFilled />
@@ -130,7 +144,7 @@ const FooterSection = () => {
           <div
             style={{
               textTransform: 'capitalize',
-              fontSize: '1rem',
+              fontSize: '1vw',
               fontWeight: '400',
             }}
           >
@@ -160,7 +174,7 @@ const FooterSection = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              fontSize: '1.25rem',
+              fontSize: '1.25vw',
             }}
           >
             <IconMapPinFilled />
@@ -177,7 +191,7 @@ const FooterSection = () => {
           <div
             style={{
               textTransform: 'capitalize',
-              fontSize: '1rem',
+              fontSize: '1vw',
               fontWeight: '400',
             }}
           >
@@ -206,7 +220,7 @@ const FooterSection = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              fontSize: '1.25rem',
+              fontSize: '1.25vw',
             }}
           >
             <IconMapPinFilled />
@@ -223,7 +237,7 @@ const FooterSection = () => {
           <div
             style={{
               textTransform: 'capitalize',
-              fontSize: '1rem',
+              fontSize: '1vw',
               fontWeight: '400',
             }}
           >
@@ -232,7 +246,391 @@ const FooterSection = () => {
           </div>
         </motion.div>
         <br />
-        {/* ============ */}
+        <div style={{ marginTop: 'auto' }}>
+          <motion.h4
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            variants={{
+              hidden: {
+                x: -100,
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+            style={{
+              color: 'black',
+              fontSize: '2vw',
+              fontWeight: '700',
+              textTransform: 'capitalize',
+              marginBottom: '1vw',
+            }}
+          >
+            Liên hệ với chúng tôi
+          </motion.h4>
+          {/* ============ */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            variants={{
+              hidden: {
+                x: -100,
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: '1.25vw',
+              }}
+            >
+              <IconPhoneFilled />
+              <span
+                style={{
+                  margin: '0 8px',
+                  textTransform: 'capitalize',
+                  fontWeight: 'bold',
+                }}
+              >
+                Hotline:
+              </span>
+            </div>
+            <a
+              style={{
+                textTransform: 'capitalize',
+                fontSize: '1vw',
+                fontWeight: '400',
+              }}
+              href="tel:02873806679"
+            >
+              0287 308 6679
+            </a>
+            <div style={{ margin: '0 1vw' }}>{' - '}</div>
+            <a
+              style={{
+                textTransform: 'capitalize',
+                fontSize: '1vw',
+                fontWeight: '400',
+              }}
+              href="tel:0938159476"
+            >
+              0938 159 476
+            </a>
+          </motion.div>
+          <br />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            variants={{
+              hidden: {
+                x: -100,
+                opacity: 0,
+              },
+              visible: {
+                x: 0,
+                opacity: 1,
+              },
+            }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: '1.25vw',
+              }}
+            >
+              <IconMailFilled />
+              <span
+                style={{
+                  margin: '0 8px',
+                  textTransform: 'capitalize',
+                  fontWeight: 'bold',
+                }}
+              >
+                Email:
+              </span>
+            </div>
+            <a
+              style={{
+                fontSize: '1vw',
+                fontWeight: '400',
+              }}
+              href="mailto:infor@dpmgroup.vn"
+            >
+              infor@dpmgroup.vn
+            </a>
+          </motion.div>
+          {isHasRow ? (
+            <>
+              <br />
+              {/* ============ */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+                variants={{
+                  hidden: {
+                    x: -100,
+                    opacity: 0,
+                  },
+                  visible: {
+                    x: 0,
+                    opacity: 1,
+                  },
+                }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    fontSize: '1.25vw',
+                  }}
+                >
+                  <IconBrandFacebookFilled />
+                  <span
+                    style={{
+                      margin: '0 8px',
+                      textTransform: 'capitalize',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    Facebook:
+                  </span>
+                </div>
+                <a
+                  style={{
+                    textTransform: 'capitalize',
+                    fontSize: '1vw',
+                    fontWeight: '400',
+                  }}
+                  href="https://www.facebook.com/dpmgroup.vn"
+                >
+                  CÔNG TY CỔ PHẦN TẬP ĐOÀN D P M
+                </a>
+              </motion.div>
+              <br />
+              {/* ============ */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 1 }}
+                variants={{
+                  hidden: {
+                    x: -100,
+                    opacity: 0,
+                  },
+                  visible: {
+                    x: 0,
+                    opacity: 1,
+                  },
+                }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    fontSize: '1.25vw',
+                  }}
+                >
+                  <IconBrandWhatsapp />
+                  <span
+                    style={{
+                      margin: '0 8px',
+                      textTransform: 'capitalize',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    Zalo:
+                  </span>
+                </div>
+                <a
+                  style={{
+                    textTransform: 'capitalize',
+                    fontSize: '1vw',
+                    fontWeight: '400',
+                  }}
+                  href="https://zalo.me/2447259516218037384?gidzl=OCqS0VdJFW1dqnG1yCa_0s_G5GNlnpSA9TjD3UxDCWDmqXvIwiyr1d7GJm3lcsC188P903UkBXit_zSr00"
+                >
+                  DPM Group Corporation
+                </a>
+              </motion.div>
+            </>
+          ) : null}
+        </div>
+      </div>
+      <div
+        style={{
+          padding: '120px 60px',
+          width: '70%',
+          display: 'flex',
+          flexDirection: 'column',
+
+          justifyContent: 'space-between',
+        }}
+      >
+        <motion.img
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          variants={{
+            hidden: {
+              x: 100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+          src={footerMap}
+          alt="footerMap"
+          style={{
+            width: '100%',
+            // height: '100%',
+            objectFit: 'scale-down',
+            alignItems: 'flex-end',
+          }}
+        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          variants={{
+            hidden: {
+              x: 100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+          style={{
+            fontSize: '1.5vw',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5vw',
+            color: '#2776BB',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '2.5vw',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              color: '#FF0000',
+            }}
+          >
+            D
+          </span>
+          evelopment
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          variants={{
+            hidden: {
+              x: 100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+          style={{
+            fontSize: '1.5vw',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5vw',
+            color: '#2776BB',
+            textAlign: 'center',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '2.5vw',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              color: '#F1EB1F',
+            }}
+          >
+            P
+          </span>
+          roperity
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          variants={{
+            hidden: {
+              x: 100,
+              opacity: 0,
+            },
+            visible: {
+              x: 0,
+              opacity: 1,
+            },
+          }}
+          style={{
+            fontSize: '1.5vw',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5vw',
+            color: '#2776BB',
+            textAlign: 'end',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '2.5vw',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              color: '#00FF00',
+            }}
+          >
+            M
+          </span>
+          ultination
+        </motion.div>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -240,7 +638,7 @@ const FooterSection = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
           variants={{
             hidden: {
-              x: -100,
+              x: 100,
               opacity: 0,
             },
             visible: {
@@ -249,211 +647,14 @@ const FooterSection = () => {
             },
           }}
           style={{
-            display: 'flex',
-            alignItems: 'center',
+            fontSize: '1.5vw',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            color: 'grey',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              fontSize: '1.25rem',
-            }}
-          >
-            <IconPhoneFilled />
-            <span
-              style={{
-                margin: '0 8px',
-                textTransform: 'capitalize',
-                fontWeight: 'bold',
-              }}
-            >
-              Hotline:
-            </span>
-          </div>
-          <a
-            style={{
-              textTransform: 'capitalize',
-              fontSize: '1rem',
-              fontWeight: '400',
-            }}
-            href="tel:02873806679"
-          >
-            0287 308 6679
-          </a>
+          Development with you, Prosperity is shared
         </motion.div>
-        <br />
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          variants={{
-            hidden: {
-              x: -100,
-              opacity: 0,
-            },
-            visible: {
-              x: 0,
-              opacity: 1,
-            },
-          }}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              fontSize: '1.25rem',
-            }}
-          >
-            <IconMailFilled />
-            <span
-              style={{
-                margin: '0 8px',
-                textTransform: 'capitalize',
-                fontWeight: 'bold',
-              }}
-            >
-              Email:
-            </span>
-          </div>
-          <a
-            style={{
-              fontSize: '1rem',
-              fontWeight: '400',
-            }}
-            href="mailto:infor@dpmgroup.vn"
-          >
-            infor@dpmgroup.vn
-          </a>
-        </motion.div>
-        {isHasRow ? (
-          <>
-            <br />
-            {/* ============ */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              variants={{
-                hidden: {
-                  x: -100,
-                  opacity: 0,
-                },
-                visible: {
-                  x: 0,
-                  opacity: 1,
-                },
-              }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  fontSize: '1.25rem',
-                }}
-              >
-                <IconBrandFacebookFilled />
-                <span
-                  style={{
-                    margin: '0 8px',
-                    textTransform: 'capitalize',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  Facebook:
-                </span>
-              </div>
-              <a
-                style={{
-                  textTransform: 'capitalize',
-                  fontSize: '1rem',
-                  fontWeight: '400',
-                }}
-                href="https://www.facebook.com/dpmgroup.vn"
-              >
-                CÔNG TY CỔ PHẦN TẬP ĐOÀN D P M
-              </a>
-            </motion.div>
-            <br />
-            {/* ============ */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 1 }}
-              variants={{
-                hidden: {
-                  x: -100,
-                  opacity: 0,
-                },
-                visible: {
-                  x: 0,
-                  opacity: 1,
-                },
-              }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  fontSize: '1.25rem',
-                }}
-              >
-                <IconBrandWhatsapp />
-                <span
-                  style={{
-                    margin: '0 8px',
-                    textTransform: 'capitalize',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  Zalo:
-                </span>
-              </div>
-              <a
-                style={{
-                  textTransform: 'capitalize',
-                  fontSize: '1rem',
-                  fontWeight: '400',
-                }}
-                href="https://zalo.me/2447259516218037384?gidzl=OCqS0VdJFW1dqnG1yCa_0s_G5GNlnpSA9TjD3UxDCWDmqXvIwiyr1d7GJm3lcsC188P903UkBXit_zSr00"
-              >
-                DPM Group Corporation
-              </a>
-            </motion.div>
-          </>
-        ) : null}
-      </div>
-      <div
-        style={{
-          padding: '2rem',
-          width: '70%',
-        }}
-      >
-        <img
-          src={footerMap}
-          alt="footerMap"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-            filter: 'grayscale(1)',
-          }}
-        />
       </div>
     </section>
   );

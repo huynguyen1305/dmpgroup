@@ -1,8 +1,8 @@
-import bannerMedal from '@/assets/images/home-banner-medal.jpg';
-import banner1 from '@/assets/images/home-banner-1.jpg';
-import banner2 from '@/assets/images/home-banner-2.jpg';
-import banner3 from '@/assets/images/home-banner-3.jpg';
-import banner4 from '@/assets/images/home-banner-4.png';
+import banner5 from '@/assets/images/du-an-5.jpg';
+import banner1 from '@/assets/images/du-an-1.jpg';
+import banner2 from '@/assets/images/du-an-2.jpg';
+import banner3 from '@/assets/images/du-an-3.jpg';
+import banner4 from '@/assets/images/du-an-4.jpg';
 
 import { Box } from '@mantine/core';
 
@@ -11,28 +11,28 @@ const Contruct = () => {
   const items = [
     {
       key: 1,
-      name: 'Land Mark 81',
+      name: 'Nhà Máy Uniben',
       img: banner1,
     },
     {
       key: 2,
-      name: 'Land Mark 82',
+      name: 'SLP Xuyên Á',
       img: banner2,
     },
     {
       key: 3,
-      name: 'Land Mark 83',
-      img: banner4,
+      name: 'SLP LONG HẬU Logistic GD2',
+      img: banner3,
     },
     {
       key: 4,
-      name: 'Land Mark 4',
-      img: bannerMedal,
+      name: 'Công ty TNHH Paihong VN',
+      img: banner4,
     },
     {
       key: 5,
-      name: 'Land Mark 85',
-      img: banner3,
+      name: 'LOGOS LOGISTICS LONG AN',
+      img: banner5,
     },
   ];
 
