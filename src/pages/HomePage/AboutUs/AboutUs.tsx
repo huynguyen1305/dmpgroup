@@ -356,7 +356,7 @@ const AboutUs = () => {
                 src={item.image}
                 alt="logo"
                 style={{
-                  width: '100%',
+                  width: '180px',
                   height: '100%',
                   objectFit: 'contain',
                 }}
