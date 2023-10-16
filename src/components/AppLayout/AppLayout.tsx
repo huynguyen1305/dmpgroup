@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import AppHeader from '../AppHeader/AppHeader';
 import useAppStore from '@/store/appStore';
 import { useLayoutEffect, useRef } from 'react';
-import bgVideo from '@/assets/images/logo_nobg_com.mp4';
+import bgVideo from '@/assets/images/logo_bg.mp4';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -15,7 +15,7 @@ const AppLayout = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   useLayoutEffect(() => {
     if (videoContainerRef.current && videoRef.current) {
-      videoRef.current.playbackRate = 1.2;
+      videoRef.current.playbackRate = 1;
       videoRef.current.play();
 
       videoRef.current.addEventListener(
