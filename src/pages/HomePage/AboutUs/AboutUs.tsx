@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { Autoplay } from 'swiper/modules';
 import { SwiperSlide, Swiper } from 'swiper/react';
 
-import looper from '@/assets/images/looper2.mp4';
+// import looper from '@/assets/images/looper2.mp4';
 import { motion } from 'framer-motion';
 import { useLayoutEffect, useRef } from 'react';
+import testImage from '@/assets/images/test1.png';
 
 const imageLists = [
   {
@@ -131,6 +132,10 @@ const AboutUs = () => {
         width: '100%',
         height: '100%',
         overflow: 'hidden',
+        backgroundImage: `url(${testImage})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'bottom',
       }}
       className={styles.aboutUs}
     >
@@ -142,165 +147,183 @@ const AboutUs = () => {
           width: '100%',
           height: '100%',
           display: 'flex',
-          justifyContent: 'space-around',
           alignItems: 'center',
+          background: 'rgba(0, 0, 0, 0.5)',
         }}
       >
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: {
-              x: '-100px',
-              opacity: 0,
-            },
-            visible: {
-              x: 0,
-              opacity: 1,
-            },
-          }}
-          style={{
-            width: '50%',
-            height: '100%',
-            overflow: 'hidden',
-            // background: 'red',
-            // opacity: 0.5,
-          }}
-        >
-          <div style={{ width: '100%', height: '100%' }}>
-            <video
-              autoPlay
-              muted
-              loop
-              controls={false}
-              id="bgVideo"
-              ref={videoRef}
-              preload={'auto'}
-              style={{
-                width: '100%',
-                height: '100%',
-                transform: 'scale(2.5)',
-                background: '#EFEFEF',
-              }}
-            >
-              <source src={looper} type="video/mp4" />
-            </video>
-          </div>
-        </motion.div>
         <div
           style={{
-            width: '50%',
-            height: '100%',
-
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-            // background: 'red',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            width: '60%',
+            padding: '80px',
+            transform: 'translateY(-10px)',
           }}
         >
-          <div
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: {
+                y: '100px',
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
             style={{
-              flex: '1',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '80px 160px 80px 80px',
-              background: '#EFEFEF',
+              fontSize: '3vw',
+              fontWeight: '500',
+              textTransform: 'capitalize',
+              color: '#EEEEEE',
             }}
           >
-            <motion.h2
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              transition={{ duration: 0.5 }}
-              variants={{
-                hidden: {
-                  y: '100px',
-                  opacity: 0,
-                },
-                visible: {
-                  y: 0,
-                  opacity: 1,
-                },
-              }}
+            Về Chúng tôi
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={{
+              hidden: {
+                y: '50px',
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '8px' }}
+          >
+            Từ ngày thành lập 2010 và phát triển đến nay, DPM đã vượt qua hàng
+            ngàn thách thức, khắc phục mọi khó khăn để khẳng định mình là một
+            trong những nhà sản xuất và lắp ghép các sản phẩm bê tông dự ứng lực
+            đúc sẵn hàng đầu hiện nay.
+          </motion.p>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={{
+              hidden: {
+                y: '50px',
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '8px' }}
+          >
+            Chúng tôi không chỉ đo lường thành công bằng số lượng công trình
+            hoàn thành, mà còn bằng khả năng tạo ra giá trị cho đối tác, khách
+            hàng, và xã hội. Với phương châm “Phát triển cùng bạn, Thịnh vượng
+            sẽ chia,” Chúng tôi cam kết kiến tạo những công trình đáp ứng mọi
+            tiêu chuẩn đề ra của các chủ đầu tư, các tổng thầu về An Toàn, Chất
+            lượng, Thẩm mỹ, Tiến độ và Giá thành.
+          </motion.p>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={{
+              hidden: {
+                y: '50px',
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '8px' }}
+          >
+            Chân thành cảm ơn sự tin tưởng và ủng hộ từ phía đối tác, khách
+            hàng, và cộng đồng. Hãy cùng chúng tôi tiến bước vào những hành
+            trình xây dựng tương lai thịnh vượng và bền vững.
+          </motion.p>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={{
+              hidden: {
+                y: '50px',
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '16px' }}
+          >
+            Chủ tịch hội đồng quản trị.
+          </motion.p>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={{
+              hidden: {
+                y: '50px',
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+            style={{ color: '#EEEEEE', fontSize: '1vw' }}
+          >
+            Lê Năng Minh
+          </motion.p>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={{
+              hidden: {
+                y: '50px',
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+            className={styles.buttonMore}
+          >
+            {/* <IconArrowBarToRight /> */}
+            <Link
+              to="/gioi-thieu"
               style={{
-                fontSize: '3vw',
-                fontWeight: '500',
-                textTransform: 'capitalize',
+                textDecoration: 'none',
+                color: 'white',
+                padding: '8px 1vw',
+                backgroundColor: 'black',
+                borderRadius: '4px',
+                fontSize: '1vw',
+                border: '4px solid white',
               }}
             >
-              Về Chúng tôi
-            </motion.h2>
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              variants={{
-                hidden: {
-                  y: '50px',
-                  opacity: 0,
-                },
-                visible: {
-                  y: 0,
-                  opacity: 1,
-                },
-              }}
-              style={{ color: '#262626', fontSize: '1vw' }}
-            >
-              Từ ngày thành lập 2010 và phát triển đến nay, DPM đã vượt qua hàng
-              ngàn thách thức, khắc phục mọi khó khăn để khẳng định mình là một
-              trong những nhà sản xuất và lắp ghép các sản phẩm bê tông dự ứng
-              lực đúc sẵn hàng đầu hiện nay. Chúng tôi không chỉ đo lường thành
-              công bằng số lượng công trình hoàn thành, mà còn bằng khả năng tạo
-              ra giá trị cho đối tác, khách hàng, và xã hội. Với phương châm
-              “Phát triển cùng bạn, Thịnh vượng sẽ chia,” Chúng tôi cam kết kiến
-              tạo những công trình đáp ứng mọi tiêu chuẩn đề ra của các chủ đầu
-              tư, các tổng thầu về An Toàn, Chất lượng, Thẩm mỹ, Tiến độ và Giá
-              thành. Chân thành cảm ơn sự tin tưởng và ủng hộ từ phía đối tác,
-              khách hàng, và cộng đồng. Hãy cùng chúng tôi tiến bước vào những
-              hành trình xây dựng tương lai thịnh vượng và bền vững
-            </motion.p>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              variants={{
-                hidden: {
-                  y: '50px',
-                  opacity: 0,
-                },
-                visible: {
-                  y: 0,
-                  opacity: 1,
-                },
-              }}
-              className={styles.buttonMore}
-            >
-              {/* <IconArrowBarToRight /> */}
-              <Link
-                to="/gioi-thieu"
-                style={{
-                  textDecoration: 'none',
-                  color: 'white',
-                  padding: '8px 1vw',
-                  backgroundColor: 'black',
-                  borderRadius: '4px',
-                  fontSize: '1vw',
-                  border: '4px solid white',
-                }}
-              >
-                Xem thêm
-              </Link>
-            </motion.div>
-          </div>
-          <div></div>
+              Xem thêm
+            </Link>
+          </motion.div>
         </div>
       </div>
       <div

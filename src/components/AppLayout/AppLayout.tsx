@@ -57,6 +57,11 @@ const AppLayout = () => {
           id="bgVideo"
           ref={videoRef}
           preload={'auto'}
+          style={{
+            width: '100%',
+            height: '100vh',
+            objectFit: 'cover',
+          }}
         >
           <source src={bgVideo} type="video/mp4" />
         </video>

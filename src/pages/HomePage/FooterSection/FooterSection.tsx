@@ -8,7 +8,7 @@ import {
   IconPhoneFilled,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
-import footerImg from '@/assets/images/7.jpg';
+import footerImg from '@/assets/images/footer-test.jpg';
 const FooterSection = () => {
   const isHasRow = useMediaQuery('(min-width: 1400px)');
   return (
@@ -31,6 +31,7 @@ const FooterSection = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+          color: 'white',
           // alignItems: 'center',
         }}
       >
@@ -50,7 +51,7 @@ const FooterSection = () => {
             },
           }}
           style={{
-            color: 'black',
+            //  color: 'white',
             fontSize: '3vw',
             fontWeight: '700',
             textTransform: 'uppercase',
@@ -263,7 +264,7 @@ const FooterSection = () => {
               },
             }}
             style={{
-              color: 'black',
+              // color: 'black',
               fontSize: '2vw',
               fontWeight: '700',
               textTransform: 'capitalize',
@@ -650,7 +651,7 @@ const FooterSection = () => {
             fontSize: '1.5vw',
             fontWeight: 'bold',
             textTransform: 'uppercase',
-            color: 'grey',
+            color: 'rgb(39, 118, 187)',
           }}
         >
           Development with you, Prosperity is shared
