@@ -36,7 +36,7 @@ const AppLayout = () => {
   }, []);
   return (
     <>
-      {/* <div
+      <div
         ref={videoContainerRef}
         style={{
           width: '100%',
@@ -65,7 +65,7 @@ const AppLayout = () => {
         >
           <source src={bgVideo} type="video/mp4" />
         </video>
-      </div> */}
+      </div>
       <AppHeader />
       <main style={{ minHeight: '100vh' }}>
         <Outlet />
