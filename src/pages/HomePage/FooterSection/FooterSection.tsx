@@ -1,4 +1,4 @@
-import footerMap from '@/assets/images/logo-dmp.png';
+import footerMap from '@/assets/images/footer-map.png';
 import { useMediaQuery } from '@mantine/hooks';
 import {
   IconBrandFacebookFilled,
@@ -8,7 +8,7 @@ import {
   IconPhoneFilled,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
-import footerImg from '@/assets/images/footer-test.jpg';
+// import footerImg from '@/assets/images/footer-test.jpg';
 const FooterSection = () => {
   const isHasRow = useMediaQuery('(min-width: 1400px)');
   return (
@@ -17,10 +17,11 @@ const FooterSection = () => {
         width: '100%',
         height: '100%',
         display: 'flex',
-        backgroundImage: `url(${footerImg})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
+        // backgroundImage: `url(${footerImg})`,
+        // backgroundSize: 'cover',
+        // backgroundRepeat: 'no-repeat',
         overflow: 'hidden',
+        background: '#87898B',
       }}
     >
       <div
@@ -501,6 +502,21 @@ const FooterSection = () => {
           justifyContent: 'space-between',
         }}
       >
+        <img
+          src={footerMap}
+          style={{ width: '100%', height: '100%', objectFit: 'scale-down' }}
+        />
+      </div>
+      {/* <div
+        style={{
+          padding: '120px 60px',
+          width: '70%',
+          display: 'flex',
+          flexDirection: 'column',
+
+          justifyContent: 'space-between',
+        }}
+      >
         <motion.img
           initial="hidden"
           whileInView="visible"
@@ -656,7 +672,7 @@ const FooterSection = () => {
         >
           Development with you, Prosperity is shared
         </motion.div>
-      </div>
+      </div> */}
     </section>
   );
 };
