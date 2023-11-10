@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { Autoplay } from 'swiper/modules';
 import { SwiperSlide, Swiper } from 'swiper/react';
 
-// import looper from '@/assets/images/looper2.mp4';
+import looper from '@/assets/images/looper2.mp4';
 import { motion } from 'framer-motion';
 import { useLayoutEffect, useRef } from 'react';
-import testImage from '@/assets/images/test1.png';
+// import testImage from '@/assets/images/test1.png';
 
 const imageLists = [
   {
@@ -132,10 +132,11 @@ const AboutUs = () => {
         width: '100%',
         height: '100%',
         overflow: 'hidden',
-        backgroundImage: `url(${testImage})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'bottom',
+        backgroundColor: 'white',
+        // backgroundImage: `url(${testImage})`,
+        // backgroundSize: 'cover',
+        // backgroundRepeat: 'no-repeat',
+        // backgroundPosition: 'bottom',
       }}
       className={styles.aboutUs}
     >
@@ -148,9 +149,30 @@ const AboutUs = () => {
           height: '100%',
           display: 'flex',
           alignItems: 'center',
-          background: 'rgba(0, 0, 0, 0.5)',
+          background: 'rgb(239, 239, 239)',
         }}
       >
+        <div style={{ width: '40%', height: '100%' }}>
+          <div style={{ width: '100%', height: '100%' }}>
+            <video
+              autoPlay
+              muted
+              loop
+              controls={false}
+              id="bgVideo"
+              ref={videoRef}
+              preload={'auto'}
+              style={{
+                width: '100%',
+                height: '100%',
+                transform: 'scale(2.5)',
+                background: '#EFEFEF',
+              }}
+            >
+              <source src={looper} type="video/mp4" />
+            </video>
+          </div>
+        </div>
         <div
           style={{
             display: 'flex',
@@ -181,7 +203,7 @@ const AboutUs = () => {
               fontSize: '3vw',
               fontWeight: '500',
               textTransform: 'capitalize',
-              color: '#EEEEEE',
+              color: 'black',
             }}
           >
             Về Chúng tôi
@@ -201,7 +223,7 @@ const AboutUs = () => {
                 opacity: 1,
               },
             }}
-            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '8px' }}
+            style={{ color: 'black', fontSize: '1vw', marginTop: '8px' }}
           >
             Từ ngày thành lập 2010 và phát triển đến nay, DPM đã vượt qua hàng
             ngàn thách thức, khắc phục mọi khó khăn để khẳng định mình là một
@@ -223,7 +245,7 @@ const AboutUs = () => {
                 opacity: 1,
               },
             }}
-            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '8px' }}
+            style={{ color: 'black', fontSize: '1vw', marginTop: '8px' }}
           >
             Chúng tôi không chỉ đo lường thành công bằng số lượng công trình
             hoàn thành, mà còn bằng khả năng tạo ra giá trị cho đối tác, khách
@@ -247,7 +269,7 @@ const AboutUs = () => {
                 opacity: 1,
               },
             }}
-            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '8px' }}
+            style={{ color: 'black', fontSize: '1vw', marginTop: '8px' }}
           >
             Chân thành cảm ơn sự tin tưởng và ủng hộ từ phía đối tác, khách
             hàng, và cộng đồng. Hãy cùng chúng tôi tiến bước vào những hành
@@ -268,7 +290,7 @@ const AboutUs = () => {
                 opacity: 1,
               },
             }}
-            style={{ color: '#EEEEEE', fontSize: '1vw', marginTop: '16px' }}
+            style={{ color: 'black', fontSize: '1vw', marginTop: '16px' }}
           >
             Chủ tịch hội đồng quản trị.
           </motion.p>

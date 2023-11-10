@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
 import Activity from './Activity/Activity';
-import Contruct from './Contruct/Contruct';
+// import Contruct from './Contruct/Contruct';
 import FooterSection from './FooterSection/FooterSection';
 
 import News from './News/News';
@@ -12,6 +12,7 @@ import News from './News/News';
 import PageAble from 'pageable';
 // import useAppStore from '@/store/appStore';
 import { Lethargy } from 'lethargy-ts';
+import ContructNew from './Contruct/ContructNew';
 
 const HomePage = () => {
   const pageAbleRef = useRef(null);
@@ -98,7 +99,8 @@ const HomePage = () => {
           <News />
         </div>
         <div data-anchor="contruct" id="contruct">
-          <Contruct />
+          {/* <Contruct /> */}
+          <ContructNew />
         </div>
         <div data-anchor="footer-section" id="footer-section">
           <FooterSection />
