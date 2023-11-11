@@ -3,7 +3,7 @@ import { Box } from '@mantine/core';
 import { useLayoutEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
-import Activity from './Activity/Activity';
+// import Activity from './Activity/Activity';
 // import Contruct from './Contruct/Contruct';
 import FooterSection from './FooterSection/FooterSection';
 
@@ -13,6 +13,7 @@ import PageAble from 'pageable';
 // import useAppStore from '@/store/appStore';
 import { Lethargy } from 'lethargy-ts';
 import ContructNew from './Contruct/ContructNew';
+import ActivityNew from './Activity/ActivityNew';
 
 const HomePage = () => {
   const pageAbleRef = useRef(null);
@@ -93,7 +94,7 @@ const HomePage = () => {
           <AboutUs />
         </div>
         <div data-anchor="activity" id="activity">
-          <Activity />
+          <ActivityNew />
         </div>
         <div data-anchor="news" id="news" style={{ background: '#EFEFEF' }}>
           <News />
