@@ -1,6 +1,6 @@
 import { Box } from '@mantine/core';
 
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Welcome from './Welcome/Welcome';
 import AboutUs from './AboutUs/AboutUs';
 // import Activity from './Activity/Activity';
@@ -14,13 +14,16 @@ import PageAble from 'pageable';
 import { Lethargy } from 'lethargy-ts';
 import ContructNew from './Contruct/ContructNew';
 import ActivityNew from './Activity/ActivityNew';
+import { useLocation } from 'react-router-dom';
 
 const HomePage = () => {
   const pageAbleRef = useRef(null);
   const containerPageRef = useRef(null);
+  const location = useLocation();
 
-  useLayoutEffect(() => {
-    if (document) {
+  useEffect(() => {
+    console.log(location.pathname);
+    if (document && location.pathname === '/') {
       const pageAble = new PageAble(containerPageRef.current, {
         pips: true,
         animation: 1000,
@@ -70,6 +73,14 @@ const HomePage = () => {
       });
 
       pageAbleRef.current = pageAble;
+      return () => {
+        document.removeEventListener('mousewheel', fpScroll);
+        document.removeEventListener('DOMMouseScroll', fpScroll);
+        document.removeEventListener('wheel', fpScroll);
+        document.removeEventListener('MozMousePixelScroll', fpScroll);
+        pageAbleRef.current = null;
+        pageAble.destroy();
+      };
     }
   }, []);
 

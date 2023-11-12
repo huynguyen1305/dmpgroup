@@ -494,7 +494,6 @@ const FooterSection = () => {
       </div>
       <div
         style={{
-          padding: '120px 60px',
           width: '70%',
           display: 'flex',
           flexDirection: 'column',

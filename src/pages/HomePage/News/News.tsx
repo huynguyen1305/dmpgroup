@@ -78,7 +78,6 @@ const News = () => {
         <motion.h3
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: {
@@ -146,7 +145,6 @@ const News = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={{
               hidden: {
@@ -169,8 +167,7 @@ const News = () => {
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
                     variants={{
                       hidden: {
                         x: '100%',
@@ -181,7 +178,7 @@ const News = () => {
                         opacity: 1,
                       },
                     }}
-                    key={item.key + Math.random()}
+                    key={item.key}
                   >
                     <CardNews item={item} />
                   </motion.div>
@@ -192,7 +189,6 @@ const News = () => {
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                     variants={{
                       hidden: {

@@ -7,15 +7,19 @@ import { useEffect, useState } from 'react';
 const navBars = [
   {
     name: 'trang chủ',
-    href: '/',
+    href: '/#welcome-section',
   },
   {
-    name: 'Giới thiệu',
+    name: 'Về Chúng Tôi',
     href: '/gioi-thieu',
   },
   {
     name: 'Lĩnh vực hoạt động',
     href: '/linh-vuc-hoat-dong',
+  },
+  {
+    name: 'Các Dự Án',
+    href: '/du-an',
   },
 ];
 const AppHeader = () => {
@@ -26,15 +30,19 @@ const AppHeader = () => {
 
   useEffect(() => {
     const hash = location.hash;
-    if (
-      hash === '#news' ||
-      hash === '#about-us' ||
-      hash === '#contruct' ||
-      hash === '#footer-section'
-    ) {
-      setIsShowNav(true);
+    if (location.pathname === '/') {
+      if (
+        hash === '#news' ||
+        hash === '#about-us' ||
+        hash === '#contruct' ||
+        hash === '#footer-section'
+      ) {
+        setIsShowNav(true);
+      } else {
+        setIsShowNav(false);
+      }
     } else {
-      setIsShowNav(false);
+      setIsShowNav(true);
     }
   }, [location]);
 
@@ -44,7 +52,7 @@ const AppHeader = () => {
         <div
           className={classes.logo}
           onClick={() => {
-            navigate('/');
+            navigate('/#welcome-section');
           }}
         >
           <img

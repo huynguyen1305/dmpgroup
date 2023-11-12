@@ -11,6 +11,13 @@ import AppThemeProvider from './configs/mantineTheme';
 import './global.scss';
 import { queryClient } from './configs/queryClient';
 import AboutPage from './pages/AboutPage/AboutPage';
+import ActivePage from './pages/ActivePage/ActivePage';
+import ActivePageThietKe from './pages/ActivePage/ActivePageThietKe';
+import ActivePageSanXuat from './pages/ActivePage/ActivePageSanXuat';
+import ActivePageVanChuyen from './pages/ActivePage/ActivePageVanChuyen';
+import ActivePageLapDat from './pages/ActivePage/ActivePageLapDat';
+import DuAnPage from './pages/DuAnPage/DuAnPage';
+import DuAnDetail from './pages/DuAnPage/DuAnDetail';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +38,34 @@ const router = createBrowserRouter([
         path: '/gioi-thieu',
         element: <AboutPage />,
       },
-
+      {
+        path: '/linh-vuc-hoat-dong',
+        element: <ActivePage />,
+      },
+      {
+        path: '/linh-vuc-hoat-dong/thiet-ke',
+        element: <ActivePageThietKe />,
+      },
+      {
+        path: '/linh-vuc-hoat-dong/san-xuat',
+        element: <ActivePageSanXuat />,
+      },
+      {
+        path: '/linh-vuc-hoat-dong/van-chuyen',
+        element: <ActivePageVanChuyen />,
+      },
+      {
+        path: '/linh-vuc-hoat-dong/lap-dung',
+        element: <ActivePageLapDat />,
+      },
+      {
+        path: '/du-an',
+        element: <DuAnPage />,
+      },
+      {
+        path: '/du-an/:value',
+        element: <DuAnDetail />,
+      },
       {
         element: <PrivateRoute />,
         children: [
