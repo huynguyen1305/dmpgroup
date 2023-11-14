@@ -48,9 +48,20 @@ const AppHeader = () => {
 
   return (
     <header className={classes.wrapper}>
-      <a href="/#welcome-section">
+      <div style={{ visibility: 'hidden' }}>
+        {navBars.map((navbar) => (
+          <NavLink
+            key={navbar.name}
+            to={navbar.href}
+            className={classes.navItem}
+          >
+            {navbar.name}
+          </NavLink>
+        ))}
+      </div>
+      <a href="/#welcome-section" className="flex-1">
         <div
-          className={classes.logo}
+          className={`${classes.logo}`}
           onClick={() => {
             navigate('/#welcome-section');
           }}
@@ -61,6 +72,7 @@ const AppHeader = () => {
             style={{
               height: '100%',
               padding: '8px 0',
+              margin: '0 auto',
             }}
           />
         </div>

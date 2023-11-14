@@ -12,12 +12,17 @@ import './global.scss';
 import { queryClient } from './configs/queryClient';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ActivePage from './pages/ActivePage/ActivePage';
-import ActivePageThietKe from './pages/ActivePage/ActivePageThietKe';
-import ActivePageSanXuat from './pages/ActivePage/ActivePageSanXuat';
-import ActivePageVanChuyen from './pages/ActivePage/ActivePageVanChuyen';
-import ActivePageLapDat from './pages/ActivePage/ActivePageLapDat';
+// import ActivePageThietKe from './pages/ActivePage/ActivePageThietKe';
+// import ActivePageSanXuat from './pages/ActivePage/ActivePageSanXuat';
+// import ActivePageVanChuyen from './pages/ActivePage/ActivePageVanChuyen';
+// import ActivePageLapDat from './pages/ActivePage/ActivePageLapDat';
 import DuAnPage from './pages/DuAnPage/DuAnPage';
 import DuAnDetail from './pages/DuAnPage/DuAnDetail';
+import SanXuatNew from './pages/ActivePage/SanXuatNew';
+import ThietKeNew from './pages/ActivePage/ThietKeNew';
+import VanChuyenNew from './pages/ActivePage/VanChuyenNew';
+import LapDungNew from './pages/ActivePage/LapDungNew';
+import ActivePageLapDat from './pages/ActivePage/ActivePageLapDat';
 
 const router = createBrowserRouter([
   {
@@ -44,19 +49,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/linh-vuc-hoat-dong/thiet-ke',
-        element: <ActivePageThietKe />,
+        element: <ThietKeNew />,
+      },
+      {
+        path: '/linh-vuc-hoat-dong/thiet-ke-1',
+        element: <ActivePageLapDat />,
       },
       {
         path: '/linh-vuc-hoat-dong/san-xuat',
-        element: <ActivePageSanXuat />,
+        element: <SanXuatNew />,
       },
       {
         path: '/linh-vuc-hoat-dong/van-chuyen',
-        element: <ActivePageVanChuyen />,
+        element: <VanChuyenNew />,
       },
       {
         path: '/linh-vuc-hoat-dong/lap-dung',
-        element: <ActivePageLapDat />,
+        element: <LapDungNew />,
       },
       {
         path: '/du-an',

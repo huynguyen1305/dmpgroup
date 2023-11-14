@@ -13,8 +13,9 @@ import PageAble from 'pageable';
 // import useAppStore from '@/store/appStore';
 import { Lethargy } from 'lethargy-ts';
 import ContructNew from './Contruct/ContructNew';
-import ActivityNew from './Activity/ActivityNew';
+// import ActivityNew from './Activity/ActivityNew';
 import { useLocation } from 'react-router-dom';
+import Activity from './Activity/Activity';
 
 const HomePage = () => {
   const pageAbleRef = useRef(null);
@@ -105,7 +106,7 @@ const HomePage = () => {
           <AboutUs />
         </div>
         <div data-anchor="activity" id="activity">
-          <ActivityNew />
+          <Activity />
         </div>
         <div data-anchor="news" id="news" style={{ background: '#EFEFEF' }}>
           <News />

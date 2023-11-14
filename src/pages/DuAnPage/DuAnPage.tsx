@@ -143,11 +143,13 @@ function DuAnPage() {
       ],
     },
   ];
+
   return (
     <div className="w-full h-[100vh]">
       <div className="swiperWrapper">
         <Swiper
           slidesPerView={1}
+          spaceBetween={'-500px'}
           centeredSlides
           loop
           pagination={{
@@ -164,8 +166,16 @@ function DuAnPage() {
                 alt="Philippe Pierga Design"
                 className="w-[60%] h-[60%] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
               />
-              <div className="absolute bottom-[10%] left-[50%] translate-x-[-50%] bg-black text-white p-4 delay-1000">
-                <h2 className="text-3xl">{item.name}</h2>
+              <div
+                className="absolute bottom-[10%] left-[50%] translate-x-[-50%] p-4 delay-1000"
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  color: 'black',
+                }}
+              >
+                <Link to={`/du-an/${item.value}`}>
+                  <h2 className="text-3xl">{item.name}</h2>
+                </Link>
               </div>
             </SwiperSlide>
           ))}
@@ -183,7 +193,13 @@ function DuAnPage() {
               key={item.key}
               className="w-1/3 p-4 relative h-[300px]"
             >
-              <div className="text-3xl absolute bottom-[0] left-[0] z-10 p-2 bg-black text-white">
+              <div
+                className="text-3xl absolute bottom-[0] left-[0] z-10 p-2 m-2"
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  color: 'black',
+                }}
+              >
                 {item.name}
               </div>
               <div className="w-full h-full absolute inset-0 z-1 p-2">

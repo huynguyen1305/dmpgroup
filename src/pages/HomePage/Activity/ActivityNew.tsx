@@ -63,7 +63,7 @@ const ActivityNew = () => {
       value: 'lap-dung',
       image: banner1,
       thumbnail: lapDat,
-      title: 'Công tác lắp đặt',
+      title: 'Công tác lắp dựng',
       content:
         'Với các ưu điểm trên, DPM đã nhận được sự tin tưởng của các khách hàng thi công các dự án như: LSP Long Hậu Giai đoạn 1 và 2, Logos Logiscstics Long Hậu, BW Tân Phú Trung, Paihong, SLP Xuyên Á,…',
     },
@@ -71,13 +71,12 @@ const ActivityNew = () => {
   const [active, setActive] = React.useState(activites[0]);
   const { classes } = useStyles(active);
 
-  console.log(active, active.value === activites[0].value);
   return (
     <section
       style={{
         width: '100%',
         height: '100%',
-        transition: 'all 0.3 ease-in-out',
+        transition: 'all 0.5s ease-in-out',
       }}
     >
       <div
@@ -88,9 +87,12 @@ const ActivityNew = () => {
           alt=""
           className="w-full"
           style={{ objectFit: 'cover' }}
+          onClick={() => {
+            setActive(activites[0]);
+          }}
         />
-        <div className="absolute inset-0 w-full h-full">
-          <div className="px-12 text-white pt-[200px] ">
+        <div className="absolute left-[100px] top-[-20px] w-full h-full">
+          <div className="px-12 text-white pt-[200px]">
             <h3 className="text-5xl font-bold uppercase">{active.title}</h3>
             <p className="text-xl mt-4 w-1/3">{active.content}</p>
             <Link
@@ -111,6 +113,8 @@ const ActivityNew = () => {
                   borderRadius: '4px',
                   border: '2px solid white',
                   cursor: 'pointer',
+                  display:
+                    active.value === 'linh-vuc-hoat-dong' ? 'none' : 'block',
                 }}
               >
                 Xem thêm
@@ -127,28 +131,21 @@ const ActivityNew = () => {
             alignItems: 'flex-end',
             justifyContent: 'space-between',
             width: '100%',
+            height: '190px',
             padding: '0 4rem',
             paddingBottom: '1rem',
             cursor: 'pointer',
           }}
         >
-          <div>
-            <div className="w-[400px] h-[200px]">
-              <img
-                src={activites[0].thumbnail}
-                alt=""
-                className={clsx({
-                  'border-2 border-solid border-white scale-105 grayscale-[0%]':
-                    active.value === activites[0].value,
-                  'w-full h-full grayscale-[80%] scale-100 hover:scale-105 hover:grayscale-[0%] transition-all duration-300 ease-in-out':
-                    true,
-                })}
-                onClick={() => setActive(activites[0])}
-              />
-            </div>
-          </div>
-          <div className="flex space-x-4 items-end">
-            <div className="w-[300px] h-[200px]">
+          <h3
+            className="text-2xl font-bold uppercase text-white flex-shrink-0 pr-6 w-1/4 py-4"
+            onClick={() => setActive(activites[0])}
+          >
+            Lĩnh vực hoạt động
+          </h3>
+
+          <div className="flex w-full justify-between h-full">
+            <div className="w-[auto] h-[100%]">
               <img
                 src={activites[1].thumbnail}
                 alt=""
@@ -161,7 +158,7 @@ const ActivityNew = () => {
                 onClick={() => setActive(activites[1])}
               />
             </div>
-            <div className="w-[300px] h-[200px]">
+            <div className="w-[auto] h-[100%]">
               <img
                 src={activites[2].thumbnail}
                 alt=""
@@ -174,7 +171,7 @@ const ActivityNew = () => {
                 onClick={() => setActive(activites[2])}
               />
             </div>
-            <div className="w-[300px] h-[200px]">
+            <div className="w-[auto] h-[100%]">
               <img
                 src={activites[3].thumbnail}
                 alt=""
@@ -187,7 +184,7 @@ const ActivityNew = () => {
                 onClick={() => setActive(activites[3])}
               />
             </div>
-            <div className="w-[300px] h-[200px]">
+            <div className="w-[auto] h-[100%]">
               <img
                 src={activites[4].thumbnail}
                 alt=""

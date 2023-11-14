@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
 }
 
 p {
@@ -144,9 +144,9 @@ h6 {
 
 .slideOut {
   transform: translateY(-100%);
-  transition: all 0.5s ease;
+  transition: all 0.8s ease-in-out;
   visibility: hidden;
-  transition-delay: 0.5s;
+  // transition-delay: 0.5s;
 }
 
 table {
@@ -192,7 +192,7 @@ ul {
 }
 
 .swiper-button-prev {
-  left: 100px !important;
+  left: 140px !important;
 
   &::after {
     content: "◄" !important;
@@ -202,7 +202,7 @@ ul {
 }
 
 .swiper-button-next {
-  right: 100px !important;
+  right: 140px !important;
 
   &::after {
     content: "►" !important;
@@ -218,14 +218,14 @@ ul {
 
     &::after {
       content: "◄" !important;
-      color: blue !important;
+      color: white !important;
       font-size: 2.5rem !important;
 
     }
   }
 
   & .swiper-pagination-bullet {
-    background: blue;
+    background: white;
     width: 0.8rem;
     height: 0.8rem;
   }
@@ -235,7 +235,37 @@ ul {
 
     &::after {
       content: "►" !important;
-      color: blue !important;
+      color: white !important;
+      font-size: 2.5rem !important;
+      // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+  }
+}
+
+.thiet-ke-detail {
+  .swiper-button-prev {
+    left: 2rem !important;
+
+    &::after {
+      content: "◄" !important;
+      color: white !important;
+      font-size: 2.5rem !important;
+
+    }
+  }
+
+  & .swiper-pagination-bullet {
+    background: white;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .swiper-button-next {
+    right: 2rem !important;
+
+    &::after {
+      content: "►" !important;
+      color: white !important;
       font-size: 2.5rem !important;
       // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }

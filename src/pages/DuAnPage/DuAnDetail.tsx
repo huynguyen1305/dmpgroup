@@ -3,12 +3,14 @@ import banner1 from '@/assets/images/du-an-1.jpg';
 import banner2 from '@/assets/images/du-an-2.jpg';
 import banner3 from '@/assets/images/du-an-3.jpg';
 import banner4 from '@/assets/images/du-an-4.jpg';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import FooterSection from '../HomePage/FooterSection/FooterSection';
+import { useEffect } from 'react';
 
 function DuAnDetail() {
+  const { pathname } = useLocation();
   const items = [
     {
       key: 1,
@@ -144,6 +146,14 @@ function DuAnDetail() {
   ];
   const { value } = useParams();
   const item = items.find((item) => item.value === value);
+  useEffect(() => {
+    const canControlScrollRestoration = 'scrollRestoration' in window.history;
+    if (canControlScrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
@@ -196,7 +206,7 @@ function DuAnDetail() {
             </div>
             <div className="w-1/3 px-4">
               <h3 className="text-3xl font-bold">{item?.name}</h3>
-              <p className="mt-4">{item?.description}</p>
+              {/* <p className="mt-4">{item?.description}</p> */}
               <div
                 className="mt-4"
                 dangerouslySetInnerHTML={{ __html: item?.info || '' }}

@@ -1,12 +1,14 @@
 import React from 'react';
 import { useStyles } from './styles';
 
-import banner1 from '@/assets/images/thiet-ke.jpg';
-import banner2 from '@/assets/images/san-xuat.jpg';
-import banner3 from '@/assets/images/van-chuyen.jpg';
-import banner4 from '@/assets/images/lap-dat.jpg';
+// import banner0 from '@/assets/images/lvhd-0.png';
+import banner4 from '@/assets/images/lvhd-1.png';
+import banner3 from '@/assets/images/lvhd-2.png';
+import banner2 from '@/assets/images/lvhd-3.png';
+import banner1 from '@/assets/images/lvhd-4.png';
 
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Activity = () => {
   const [active, setActive] = React.useState('design');
@@ -18,8 +20,18 @@ const Activity = () => {
         width: '100%',
         height: '100%',
         position: 'relative',
+        overflow: 'hidden',
       }}
     >
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          zIndex: '1',
+          backgroundColor: 'rgba(0,0,0,0.5)',
+        }}
+      />
       <div
         style={{
           position: 'absolute',
@@ -34,27 +46,36 @@ const Activity = () => {
           textAlign: 'center',
         }}
       >
-        <motion.h3
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: {
-              y: 100,
-              opacity: 0,
-            },
-            visible: {
-              y: 0,
-              opacity: 1,
-            },
-          }}
-        >
-          Lĩnh Vực <br /> Hoạt động
-        </motion.h3>
+        <Link to="/linh-vuc-hoat-dong">
+          <motion.h3
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: {
+                y: 100,
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+          >
+            Lĩnh Vực Hoạt động
+          </motion.h3>
+        </Link>
       </div>
       <div
-        style={{ position: 'absolute', inset: '0', zIndex: '0' }}
+        style={{
+          position: 'absolute',
+          inset: '0',
+          zIndex: '0',
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+        }}
         className={classes.backdrop}
       >
         <img
@@ -114,7 +135,6 @@ const Activity = () => {
         style={{
           position: 'absolute',
           inset: '0',
-          cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
           zIndex: 5,
@@ -128,7 +148,8 @@ const Activity = () => {
             borderRight: 'inset 0.5px #D5D5D5',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'flex-end',
+            paddingBottom: '50px',
             color: 'white',
             fontSize: '2vw',
             fontWeight: active === 'design' ? '600' : 'normal',
@@ -152,7 +173,7 @@ const Activity = () => {
               },
             }}
           >
-            Công tác thiết kế
+            <Link to="/linh-vuc-hoat-dong/thiet-ke">Công tác thiết kế</Link>
           </motion.span>
         </div>
         <div
@@ -163,7 +184,8 @@ const Activity = () => {
             borderRight: 'inset 0.5px #D5D5D5',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'flex-end',
+            paddingBottom: '50px',
             color: 'white',
             fontSize: '2vw',
             fontWeight: active === 'product' ? '600' : 'normal',
@@ -187,7 +209,7 @@ const Activity = () => {
               },
             }}
           >
-            Công tác sản xuất
+            <Link to={'/linh-vuc-hoat-dong/san-xuat'}>Công tác sản xuất</Link>
           </motion.span>
         </div>
         <div
@@ -198,7 +220,8 @@ const Activity = () => {
             borderRight: 'inset 0.5px #D5D5D5',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'flex-end',
+            paddingBottom: '50px',
             color: 'white',
             fontSize: '2vw',
             fontWeight: active === 'logistic' ? '600' : 'normal',
@@ -222,7 +245,7 @@ const Activity = () => {
               },
             }}
           >
-            Công tác vận chuyển
+            <Link to="/linh-vuc-hoat-dong/van-chuyen">Công tác vận chuyển</Link>
           </motion.span>
         </div>
         <div
@@ -233,7 +256,8 @@ const Activity = () => {
             // border: 'inset 1px #D5D5D5',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'flex-end',
+            paddingBottom: '50px',
             color: 'white',
             fontSize: '2vw',
             fontWeight: active === 'setup' ? '600' : 'normal',
@@ -257,7 +281,7 @@ const Activity = () => {
               },
             }}
           >
-            Công tác lắp đặt
+            <Link to={'/linh-vuc-hoat-dong/lap-dung'}>Công tác lắp dựng</Link>
           </motion.span>
         </div>
       </div>
