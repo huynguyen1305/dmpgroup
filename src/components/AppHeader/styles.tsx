@@ -14,7 +14,7 @@ export const useStyles = createStyles((_theme, params: any) => {
       alignItems: 'center',
       justifyContent: 'space-between',
       height: '80px',
-      padding: '0 5vw',
+      padding: '0 48px',
       backgroundColor: params ? 'white' : 'transparent',
       boxShadow: params ? '0 2px 4px 0 rgba(0, 0, 0, 0.1)' : 'none',
       transition: 'all 0.1s ease',
@@ -25,11 +25,12 @@ export const useStyles = createStyles((_theme, params: any) => {
     navItem: {
       position: 'relative',
       color: params ? 'black' : 'rgba(255, 255, 255, 1)',
+      width: 'fit-content',
 
       textTransform: 'uppercase',
-      fontSize: '1rem',
+      fontSize: '1.25rem',
       fontWeight: 500,
-      margin: '0 1rem',
+      margin: '1rem',
       transition: 'all 0.3s ease-in-out',
 
       '&::after': {

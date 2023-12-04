@@ -1,8 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { useStyles } from './styles';
 import logo from '@/assets/images/logo-dmp.png';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+// import { useLocation, useNavigate } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
+import { useDisclosure } from '@mantine/hooks';
+import { Burger } from '@mantine/core';
+import { IconSearch } from '@tabler/icons-react';
+import { useScrollLock } from '@mantine/hooks';
 
 const navBars = [
   {
@@ -21,50 +25,54 @@ const navBars = [
     name: 'Các Dự Án',
     href: '/du-an',
   },
+  {
+    name: 'Liên Hệ',
+    href: '/lien-he',
+  },
 ];
 const AppHeader = () => {
-  const [isShowNav, setIsShowNav] = useState(false);
-  const { classes } = useStyles(isShowNav);
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const [isShowNav, setIsShowNav] = useState(true);
+  const [opened, { toggle, close }] = useDisclosure();
+  const [scrollLocked, setScrollLocked] = useScrollLock();
+  const { classes } = useStyles(true);
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    const hash = location.hash;
-    if (location.pathname === '/') {
-      if (
-        hash === '#news' ||
-        hash === '#about-us' ||
-        hash === '#contruct' ||
-        hash === '#footer-section'
-      ) {
-        setIsShowNav(true);
-      } else {
-        setIsShowNav(false);
-      }
-    } else {
-      setIsShowNav(true);
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   const hash = location.hash;
+  //   if (location.pathname === '/') {
+  //     if (
+  //       hash === '#news' ||
+  //       hash === '#about-us' ||
+  //       hash === '#contruct' ||
+  //       hash === '#footer-section'
+  //     ) {
+  //       setIsShowNav(true);
+  //     } else {
+  //       setIsShowNav(false);
+  //     }
+  //   } else {
+  //     setIsShowNav(true);
+  //   }
+  // }, [location]);
 
   return (
     <header className={classes.wrapper}>
-      <div style={{ visibility: 'hidden' }}>
-        {navBars.map((navbar) => (
-          <NavLink
-            key={navbar.name}
-            to={navbar.href}
-            className={classes.navItem}
-          >
-            {navbar.name}
-          </NavLink>
-        ))}
-      </div>
-      <a href="/#welcome-section" className="flex-1">
+      <Burger
+        opened={opened}
+        onClick={() => {
+          toggle();
+          setScrollLocked(!scrollLocked);
+        }}
+        size="lg"
+        aria-label="Toggle navigation"
+      />
+      <a href="/#welcome-section">
         <div
           className={`${classes.logo}`}
-          onClick={() => {
-            navigate('/#welcome-section');
-          }}
+          // onClick={() => {
+          //   navigate('/#welcome-section');
+          // }}
         >
           <img
             src={logo}
@@ -77,18 +85,54 @@ const AppHeader = () => {
           />
         </div>
       </a>
-
-      <nav>
-        {navBars.map((navbar) => (
-          <NavLink
-            key={navbar.name}
-            to={navbar.href}
-            className={classes.navItem}
-          >
-            {navbar.name}
-          </NavLink>
-        ))}
-      </nav>
+      <IconSearch />
+      <div
+        className="absolute left-0 top-[80px] w-full flex"
+        style={{
+          height: 'calc(100vh - 80px)',
+          transform: opened ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.3s ease-in-out',
+        }}
+      >
+        <div
+          className="w-1/3 flex flex-col justify-between bg-white h-full p-8 shadow-[4px_0px_0px_0px_#00000024]"
+          // style={{
+          //   transform: opened ? 'translateX(0)' : 'translateX(-100%)',
+          //   transition: 'transform 0.5s ease-in-out',
+          // }}
+        >
+          <nav className="w-full flex flex-col flex-1 justify-center">
+            {navBars.map((navbar) => (
+              <NavLink
+                key={navbar.name}
+                to={navbar.href}
+                className={classes.navItem}
+              >
+                {navbar.name}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="w-full">
+            <img
+              src={logo}
+              alt="logo"
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+            />
+          </div>
+        </div>
+        <div
+          className="w-2/3"
+          style={{
+            width: '100%',
+            height: 'calc(100vh - 80px)',
+            background: 'transparent',
+          }}
+          onClick={close}
+        />
+      </div>
     </header>
   );
 };
