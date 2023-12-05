@@ -91,7 +91,7 @@ const AppHeader = () => {
         style={{
           height: 'calc(100vh - 80px)',
           transform: opened ? 'translateX(0)' : 'translateX(-100%)',
-          transition: 'transform 0.3s ease-in-out',
+          transition: 'transform 0.3s ease',
         }}
       >
         <div

@@ -149,7 +149,7 @@ function DuAnPage() {
       <div className="swiperWrapper">
         <Swiper
           slidesPerView={1}
-          spaceBetween={'-500px'}
+          spaceBetween={'-25%'}
           centeredSlides
           loop
           pagination={{

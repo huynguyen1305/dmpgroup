@@ -149,7 +149,7 @@ const ContructNew = () => {
         style={{
           position: 'absolute',
           top: '100px',
-          left: '300px',
+          left: '6rem',
           zIndex: '10',
         }}
       >
@@ -176,16 +176,16 @@ const ContructNew = () => {
           Nổi bật
         </h4>
       </div>
-      <div className="absolute top-[12%] right-[12%] z-10 font-semibold">
+      <div className="absolute top-[110px] right-[11%] z-10 font-semibold">
         <Link to="/du-an" className="flex items-center">
-          <span className="text-3xl mr-2">Tất cả dự án</span>{' '}
+          <span className="text-3xl mr-1">Tất cả dự án</span>{' '}
           <IconArrowBarRight />
         </Link>
       </div>
       <div className="swiperWrapper">
         <Swiper
           slidesPerView={1}
-          spaceBetween={'-500px'}
+          spaceBetween={'-25%'}
           centeredSlides
           loop={true}
           pagination={{
@@ -199,11 +199,11 @@ const ContructNew = () => {
             <SwiperSlide className="relative my-auto" key={item.key}>
               <img
                 src={item.img}
-                alt="Philippe Pierga Design"
-                className="w-[60%] h-[60%] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+                alt="DPM"
+                className="w-[60%] h-[50%] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
               />
               <div
-                className="absolute bottom-[10%] left-[50%] translate-x-[-50%] p-4 delay-1000"
+                className="absolute bottom-[1rem] left-[50%] translate-x-[-50%] translate-y-[-50%] p-4 delay-1000"
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.8)',
                   color: 'black',

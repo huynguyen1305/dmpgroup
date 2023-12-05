@@ -11,7 +11,7 @@ import banner4 from '@/assets/images/tin-tuc-7.jpg';
 import { motion } from 'framer-motion';
 
 const News = () => {
-  const isHasRow = useMediaQuery('(min-width: 1400px)');
+  const isHasRow = useMediaQuery('(min-width: 1270px)');
   const cardNews = [
     {
       key: 1,
@@ -58,6 +58,7 @@ const News = () => {
       createAt: new Date(),
     },
   ];
+
   return (
     <section
       style={{
@@ -92,7 +93,6 @@ const News = () => {
           style={{
             width: '100%',
             height: '100%',
-
             color: 'black',
             fontSize: '3vw',
             fontWeight: '500',
@@ -145,7 +145,7 @@ const News = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.7 }}
             variants={{
               hidden: {
                 x: '-100%',
@@ -161,13 +161,13 @@ const News = () => {
             <CardNews item={cardNews[0]} />
           </motion.div>
 
-          {isHasRow
+          {isHasRow && isHasRow
             ? cardNews.slice(1, 6).map((item) => {
                 return (
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    transition={{ duration: 0.5, delay: 0.7 }}
+                    transition={{ duration: 0.5 }}
                     variants={{
                       hidden: {
                         x: '100%',
@@ -189,7 +189,7 @@ const News = () => {
                   <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.5 }}
                     variants={{
                       hidden: {
                         x: '100%',

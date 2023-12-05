@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+
 @layer tailwind {
   @tailwind base;
 }
@@ -70,6 +71,8 @@ body,
   height: 100%;
   font-family: 'Inter';
   background: #EFEFEF;
+
+  counter-reset: my-counter;
 }
 
 body {
@@ -172,7 +175,7 @@ ul {
   transition: all 0.5s ease;
 
   & .swiper-pagination {
-    bottom: 7%;
+    bottom: 1rem;
     left: 0;
   }
 
@@ -185,29 +188,29 @@ ul {
   & .swiper-slide-active {
     img {
       width: 80%;
-      height: 80%;
+      height: 76%;
       transition: all 0.5s ease;
     }
   }
 }
 
 .swiper-button-prev {
-  left: 140px !important;
+  left: 7% !important;
 
   &::after {
-    content: "◄" !important;
+    content: "‹" !important;
     color: black !important;
-    font-size: 2.5rem !important;
+    font-size: 6rem !important;
   }
 }
 
 .swiper-button-next {
-  right: 140px !important;
+  right: 7% !important;
 
   &::after {
-    content: "►" !important;
+    content: "›" !important;
     color: black !important;
-    font-size: 2.5rem !important;
+    font-size: 6rem !important;
     // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 }
@@ -217,9 +220,9 @@ ul {
     left: 2rem !important;
 
     &::after {
-      content: "◄" !important;
+      content: "‹" !important;
       color: white !important;
-      font-size: 2.5rem !important;
+      font-size: 6rem !important;
 
     }
   }
@@ -234,9 +237,9 @@ ul {
     right: 2rem !important;
 
     &::after {
-      content: "►" !important;
+      content: "›" !important;
       color: white !important;
-      font-size: 2.5rem !important;
+      font-size: 6rem !important;
       // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
   }
@@ -247,9 +250,9 @@ ul {
     left: 2rem !important;
 
     &::after {
-      content: "◄" !important;
+      content: "‹" !important;
       color: white !important;
-      font-size: 2.5rem !important;
+      font-size: 6rem !important;
 
     }
   }
@@ -264,10 +267,68 @@ ul {
     right: 2rem !important;
 
     &::after {
-      content: "►" !important;
+      content: "›" !important;
       color: white !important;
-      font-size: 2.5rem !important;
+      font-size: 6rem !important;
       // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
   }
+}
+
+.pg-vertical .pg-pips {
+  right: 2rem;
+
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & li {
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+
+    &:hover {
+      margin: 0;
+    }
+  }
+
+  & ul li a {
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    position: static;
+    transition: all 0.3 linear;
+    background: rgba(255, 255, 255, 1);
+    // border-radius: 50%;
+
+    &:hover {
+      margin: 0;
+      box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    &.active {
+      position: static;
+      margin: 0;
+      box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+
+      &:hover {
+        position: static;
+        margin: 0;
+      }
+    }
+
+  }
+}
+
+.pg-pips ul li a.active,
+.pg-pips ul li:hover a.active {
+  width: 1rem;
+  height: 1rem;
 }
