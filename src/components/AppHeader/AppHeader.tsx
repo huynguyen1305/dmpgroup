@@ -1,136 +1,134 @@
-import { NavLink } from 'react-router-dom';
-import { useStyles } from './styles';
-import logo from '@/assets/images/logo-dmp.png';
-// import { useLocation, useNavigate } from 'react-router-dom';
-// import { useEffect, useState } from 'react';
-import { useDisclosure } from '@mantine/hooks';
-import { Burger } from '@mantine/core';
-import { IconSearch } from '@tabler/icons-react';
-import { useScrollLock } from '@mantine/hooks';
+import { Link, NavLink, useLocation } from "react-router-dom";
+
+import logo from "@/assets/images/logo-dmp.png";
+import BurgerIcon from "@/assets/icons/burgerMenu.svg?react"; //remember add ?react
+
+import { CloseOutlined } from "@ant-design/icons";
+import { cn } from "@/utils/twClassname";
+import { Divider } from "antd";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+
+import styles from "./AppHeader.module.scss";
 
 const navBars = [
   {
-    name: 'trang chủ',
-    href: '/#welcome-section',
+    name: "Trang Chủ",
+    path: "/",
   },
   {
-    name: 'Về Chúng Tôi',
-    href: '/gioi-thieu',
+    name: "Về Chúng Tôi",
+    path: "/gioi-thieu",
   },
   {
-    name: 'Lĩnh vực hoạt động',
-    href: '/linh-vuc-hoat-dong',
+    name: "Lĩnh vực hoạt động",
+    path: "/linh-vuc-hoat-dong",
   },
   {
-    name: 'Các Dự Án',
-    href: '/du-an',
+    name: "Tin Tức",
+    path: "/tin-tuc",
   },
   {
-    name: 'Liên Hệ',
-    href: '/lien-he',
+    name: "Các Dự Án",
+    path: "/du-an",
+  },
+  {
+    name: "Liên Hệ",
+    path: "/lien-he",
   },
 ];
-const AppHeader = () => {
-  // const [isShowNav, setIsShowNav] = useState(true);
-  const [opened, { toggle, close }] = useDisclosure();
-  const [scrollLocked, setScrollLocked] = useScrollLock();
-  const { classes } = useStyles(true);
-  // const location = useLocation();
-  // const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const hash = location.hash;
-  //   if (location.pathname === '/') {
-  //     if (
-  //       hash === '#news' ||
-  //       hash === '#about-us' ||
-  //       hash === '#contruct' ||
-  //       hash === '#footer-section'
-  //     ) {
-  //       setIsShowNav(true);
-  //     } else {
-  //       setIsShowNav(false);
-  //     }
-  //   } else {
-  //     setIsShowNav(true);
-  //   }
-  // }, [location]);
+const AppHeader = () => {
+  const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  console.log(location.pathname);
 
   return (
-    <header className={classes.wrapper}>
-      <Burger
-        opened={opened}
-        onClick={() => {
-          toggle();
-          setScrollLocked(!scrollLocked);
-        }}
-        size="lg"
-        aria-label="Toggle navigation"
-      />
-      <a href="/#welcome-section">
-        <div
-          className={`${classes.logo}`}
-          // onClick={() => {
-          //   navigate('/#welcome-section');
-          // }}
+    <header className={cn(styles.headerWrapper, "text-white px-4 md:px-12")}>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex-shrink-0 w-[28px] cursor-pointer"
+      >
+        {isOpen ? (
+          <CloseOutlined style={{ fontSize: "24px" }} />
+        ) : (
+          <BurgerIcon />
+        )}
+      </div>
+
+      <div style={{ height: "100%", padding: "8px 20px" }}>
+        <Link to="/">
+          <img src={logo} alt="DPM Group" className="w-full h-full" />
+        </Link>
+      </div>
+
+      <div
+        className="flex items-center cursor-pointer flex-shrink-0"
+        style={{ fontFamily: `Doris, sans-serif`, fontSize: "16px" }}
+      >
+        <span
+          onClick={() => i18n.changeLanguage("vi")}
+          className={cn({
+            "font-bold": i18n.language === "vi",
+          })}
         >
-          <img
-            src={logo}
-            alt="logo"
-            style={{
-              height: '100%',
-              padding: '8px 0',
-              margin: '0 auto',
-            }}
-          />
-        </div>
-      </a>
-      <IconSearch />
+          VN
+        </span>
+        <Divider
+          type="vertical"
+          style={{
+            background: "white",
+            margin: "0 8px",
+            fontSize: "20px",
+          }}
+        />
+        <span
+          onClick={() => i18n.changeLanguage("en")}
+          className={cn({
+            "font-bold": i18n.language === "en",
+          })}
+        >
+          EN
+        </span>
+      </div>
+
       <div
         className="absolute left-0 top-[80px] w-full flex"
         style={{
-          height: 'calc(100vh - 80px)',
-          transform: opened ? 'translateX(0)' : 'translateX(-100%)',
-          transition: 'transform 0.3s ease',
+          height: "calc(100vh - 80px)",
+          transform: isOpen ? "translateX(0)" : "translateX(-100%)",
+          transition: "transform 0.5s ease",
         }}
       >
         <div
-          className="w-1/3 flex flex-col justify-between bg-white h-full p-8 shadow-[4px_0px_0px_0px_#00000024]"
-          // style={{
-          //   transform: opened ? 'translateX(0)' : 'translateX(-100%)',
-          //   transition: 'transform 0.5s ease-in-out',
-          // }}
+          className="w-full md:w-1/3 flex flex-col bg-white h-full p-4 md:p-12"
+          style={{ border: "1px solid #ccc" }}
         >
-          <nav className="w-full flex flex-col flex-1 justify-center">
+          <nav className="w-full flex flex-col flex-1">
             {navBars.map((navbar) => (
               <NavLink
                 key={navbar.name}
-                to={navbar.href}
-                className={classes.navItem}
+                to={navbar.path}
+                className={cn({
+                  [styles.navItem]: true,
+                  [styles.active]: location.pathname === navbar.path,
+                })}
+                onClick={() => setIsOpen(false)}
               >
                 {navbar.name}
               </NavLink>
             ))}
           </nav>
-          <div className="w-full">
-            <img
-              src={logo}
-              alt="logo"
-              style={{
-                height: '100%',
-                width: '100%',
-              }}
-            />
-          </div>
         </div>
         <div
-          className="w-2/3"
+          className="hidden md:block md:w-2/3 bg-black opacity-50"
           style={{
-            width: '100%',
-            height: 'calc(100vh - 80px)',
-            background: 'transparent',
+            width: "100%",
+            height: "calc(100vh - 80px)",
+            background: "transparent",
           }}
-          onClick={close}
+          onClick={() => setIsOpen(false)}
         />
       </div>
     </header>

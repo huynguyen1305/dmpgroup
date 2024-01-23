@@ -1,125 +1,87 @@
-import { Box } from '@mantine/core';
+import { useState } from "react";
+import ReactPageScroller from "react-page-scroller";
 
-import { useEffect, useRef } from 'react';
-import Welcome from './Welcome/Welcome';
-import AboutUs from './AboutUs/AboutUs';
-// import Activity from './Activity/Activity';
-// import Contruct from './Contruct/Contruct';
-import FooterSection from './FooterSection/FooterSection';
+import BannerSection from "./BannerSection/BannerSection";
+import VeChungToiSection from "./VeChungToiSection/VeChungToiSection";
+import ListSectionBar from "@/components/ListSectionBar/ListSectionBar";
+import TinTucSection from "./TinTucSection";
+import LinhVucSection from "./LinhVucSection";
+import DuAnSection from "./DuAnSection";
+import FooterSection from "../../components/FooterSection";
 
-import News from './News/News';
-// @ts-ignore
-import PageAble from 'pageable';
-// import useAppStore from '@/store/appStore';
-import { Lethargy } from 'lethargy-ts';
-import ContructNew from './Contruct/ContructNew';
-// import ActivityNew from './Activity/ActivityNew';
-import { useLocation } from 'react-router-dom';
-import Activity from './Activity/Activity';
+// https://github.com/VikLiegostaiev/react-page-scroller/tree/master
+
+const homeSections = [
+  {
+    name: "Banner section",
+    href: "#banner",
+  },
+  {
+    name: "Ve chung toi section",
+    href: "#ve-chung-toi",
+  },
+  {
+    name: "Tin tuc section",
+    href: "#tin-tuc",
+  },
+  {
+    name: "Linh vuc section",
+    href: "#linh-vuc",
+  },
+  {
+    name: "Du an section",
+    href: "#du-an",
+  },
+  {
+    name: "Footer section",
+    href: "#footer",
+  },
+];
 
 const HomePage = () => {
-  const pageAbleRef = useRef(null);
-  const containerPageRef = useRef(null);
-  const location = useLocation();
+  const [currentPage, setCurrentPage] = useState(0);
+  // Core change page here: handlePageChange
+  const handlePageChange = (number: number) => {
+    setCurrentPage(number);
+  };
 
-  useEffect(() => {
-    console.log(location.pathname);
-    if (document && location.pathname === '/') {
-      const pageAble = new PageAble(containerPageRef.current, {
-        pips: true,
-        animation: 1000,
-        delay: 100,
-        orientation: 'vertical',
-        infinite: false,
-        events: {
-          wheel: false, // enable / disable mousewheel scrolling
-          mouse: false, // enable / disable mouse drag scrolling
-          touch: true, // enable / disable touch / swipe scrolling
-          keydown: true, // enable / disable keyboard navigation
-        },
-      });
-      var lethargy = new Lethargy({
-        sensitivity: 90,
-        delay: 600,
-        inertiaDecay: 60,
-      });
-      function fpScroll(e: any) {
-        e.preventDefault();
-        e.stopPropagation();
+  const handleBeforePageChange = (number: number) => {
+    console.log("page Next", number);
+  };
 
-        const check = lethargy.check(e).toString();
-        // @ts-ignore
-        const tmp = lethargy?.previousEvents[0]?.deltaY;
-
-        if (check === 'true') {
-          if (tmp < 0) {
-            pageAble.prev();
-          } else if (tmp > 0) {
-            pageAble.next();
-          }
-        }
-      }
-
-      document.addEventListener('mousewheel', fpScroll, {
-        passive: false,
-      });
-      document.addEventListener('DOMMouseScroll', fpScroll, {
-        passive: false,
-      });
-      document.addEventListener('wheel', fpScroll, {
-        passive: false,
-      });
-      document.addEventListener('MozMousePixelScroll', fpScroll, {
-        passive: false,
-      });
-
-      pageAbleRef.current = pageAble;
-      return () => {
-        document.removeEventListener('mousewheel', fpScroll);
-        document.removeEventListener('DOMMouseScroll', fpScroll);
-        document.removeEventListener('wheel', fpScroll);
-        document.removeEventListener('MozMousePixelScroll', fpScroll);
-        pageAbleRef.current = null;
-        pageAble.destroy();
-      };
-    }
-  }, []);
-
+  // TO-DO: add ListSectionBar
   return (
-    <Box
-      sx={{
-        background: '#EFEFEF',
-        '& .pg-wrapper': {
-          padding: '0 !important',
-        },
-      }}
-    >
-      <div id="containerPage" ref={containerPageRef}>
-        <div data-anchor="welcome-section" id="welcome-section">
-          <Welcome />
-        </div>
-        <div
-          data-anchor="about-us"
-          id="about-us"
-          style={{ background: '#EFEFEF' }}
-        >
-          <AboutUs />
-        </div>
-        <div data-anchor="activity" id="activity">
-          <Activity />
-        </div>
-        <div data-anchor="news" id="news" style={{ background: '#EFEFEF' }}>
-          <News />
-        </div>
-        <div data-anchor="contruct" id="contruct">
-          {/* <Contruct /> */}
-          <ContructNew />
-        </div>
-        <div data-anchor="footer-section" id="footer-section">
-          <FooterSection />
-        </div>
+    <div className="w-full h-full relative bg-[#354B99]">
+      <ReactPageScroller
+        pageOnChange={handlePageChange}
+        onBeforePageScroll={handleBeforePageChange}
+        customPageNumber={currentPage}
+      >
+        <BannerSection />
+        <VeChungToiSection />
+        <LinhVucSection />
+        <TinTucSection />
+        <DuAnSection />
+        <FooterSection />
+      </ReactPageScroller>
+
+      <div
+        style={{
+          position: "absolute",
+          right: "1rem",
+          top: "50%",
+          height: "auto",
+          transform: "translateY(-50%)",
+          zIndex: 1000,
+        }}
+      >
+        <ListSectionBar
+          listSection={homeSections}
+          handlePageChange={handlePageChange}
+          currentPage={currentPage}
+        />
       </div>
-    </Box>
+    </div>
   );
 };
 

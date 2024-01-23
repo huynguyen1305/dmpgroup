@@ -1,0 +1,6 @@
+$color: #fff;
+
+.corner_top_curved {
+  border-color: transparent transparent $color transparent;
+  border-width: 0 25vh calc(100vh - 120px) 0;
+}

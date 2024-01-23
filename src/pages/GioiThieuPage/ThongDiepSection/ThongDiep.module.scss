@@ -1,0 +1,14 @@
+.trapezoid_image {
+  clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+}
+
+:where[class^="ant-image"] {
+  width: 100%;
+}
+
+$color: #fff;
+
+.corner_top_curved {
+  border-color: transparent transparent $color transparent;
+  border-width: 0 45vh 42vw 0;
+}

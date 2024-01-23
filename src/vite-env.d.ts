@@ -1,2 +1,2 @@
 /// <reference types="vite/client" />
-declare module 'lethargy';
+/// <reference types="vite-plugin-svgr/client" />

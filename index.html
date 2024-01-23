@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -7,19 +7,22 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <!-- <script src="https://unpkg.com/pageable@latest/dist/pageable.min.js"></script> -->
-    <!-- <script
-      type="text/javascript"
-      src="https://unpkg.com/default-passive-events"
-    ></script> -->
-    <link
-      href="https://unpkg.com/pageable@latest/dist/pageable.min.css"
-      rel="stylesheet"
-    />
     <title>Công ty Cổ phần Tập Đoàn D P M</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js"
+      integrity="sha512-uzOpZ74myvXTYZ+mXUsPhDF+/iL/n32GDxdryI2SJronkEyKC8FBFRLiBQ7l7U/PTYebDbgTtbqTa6/vGtU23A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if (global === undefined) {
+        var global = window;
+      }
+    </script>
   </body>
 </html>

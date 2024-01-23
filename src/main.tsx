@@ -1,103 +1,91 @@
-import ReactDOM from 'react-dom/client';
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
 
-import AppLayout from './components/AppLayout/AppLayout';
-import ErrorPage from './pages/ErrorPage/ErrorPage';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { ConfigProvider } from "antd";
+import { StyleProvider } from "@ant-design/cssinjs";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { QueryClientProvider } from '@tanstack/react-query';
-import AppThemeProvider from './configs/mantineTheme';
-import './global.scss';
-import { queryClient } from './configs/queryClient';
-import AboutPage from './pages/AboutPage/AboutPage';
-import ActivePage from './pages/ActivePage/ActivePage';
-// import ActivePageThietKe from './pages/ActivePage/ActivePageThietKe';
-// import ActivePageSanXuat from './pages/ActivePage/ActivePageSanXuat';
-// import ActivePageVanChuyen from './pages/ActivePage/ActivePageVanChuyen';
-// import ActivePageLapDat from './pages/ActivePage/ActivePageLapDat';
-import DuAnPage from './pages/DuAnPage/DuAnPage';
-import DuAnDetail from './pages/DuAnPage/DuAnDetail';
-import SanXuatNew from './pages/ActivePage/SanXuatNew';
-import ThietKeNew from './pages/ActivePage/ThietKeNew';
-import VanChuyenNew from './pages/ActivePage/VanChuyenNew';
-import LapDungNew from './pages/ActivePage/LapDungNew';
-import ActivePageLapDat from './pages/ActivePage/ActivePageLapDat';
+import AppLayout from "@/components/AppLayout/AppLayout";
+import ErrorPage from "@/pages/ErrorPage/ErrorPage";
+
+import { antdTheme } from "@/configs/antdTheme";
+
+import GioiThieuPage from "./pages/GioiThieuPage/GioiThieuPage";
+import HomePage from "./pages/Homepage/HomePage";
+import TinTucPage from "./pages/TinTucPage/TinTucPage";
+import ThietKePage from "./pages/ThietKePage";
+import ActivePage from "./pages/ActivePage/ActivePage";
+
+import "@/configs/i18n/i18n";
+import "@/configs/global.scss";
+import SanXuatPage from "./pages/SanXuatPage/SanXuatPage";
+import VanChuyenPage from "./pages/VanChuyenPage/VanChuyenPage";
+import LapDungPage from "./pages/LapDungPage/LapDungPage";
+import DuAnPage from "./pages/DuAnPage/DuAnPage";
+import DuAnDetail from "./pages/DuAnDetail/DuAnDetail";
+import LienHePage from "./pages/LienHePage/LienHePage";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <AppLayout />,
     errorElement: <ErrorPage />,
     children: [
-      // {
-      //   index: true,
-      //   element: <Navigate to="/dashboard" replace />,
-      // },
       {
-        path: '/',
+        path: "/",
         index: true,
         element: <HomePage />,
       },
       {
-        path: '/gioi-thieu',
-        element: <AboutPage />,
+        path: "/gioi-thieu",
+        element: <GioiThieuPage />,
       },
       {
-        path: '/linh-vuc-hoat-dong',
+        path: "/tin-tuc",
+        element: <TinTucPage />,
+      },
+      {
+        path: "/linh-vuc-hoat-dong",
         element: <ActivePage />,
       },
       {
-        path: '/linh-vuc-hoat-dong/thiet-ke',
-        element: <ThietKeNew />,
+        path: "/linh-vuc-hoat-dong/thiet-ke",
+        element: <ThietKePage />,
       },
       {
-        path: '/linh-vuc-hoat-dong/thiet-ke-1',
-        element: <ActivePageLapDat />,
+        path: "/linh-vuc-hoat-dong/san-xuat",
+        element: <SanXuatPage />,
       },
       {
-        path: '/linh-vuc-hoat-dong/san-xuat',
-        element: <SanXuatNew />,
+        path: "/linh-vuc-hoat-dong/van-chuyen",
+        element: <VanChuyenPage />,
       },
       {
-        path: '/linh-vuc-hoat-dong/van-chuyen',
-        element: <VanChuyenNew />,
+        path: "/linh-vuc-hoat-dong/lap-dung",
+        element: <LapDungPage />,
       },
       {
-        path: '/linh-vuc-hoat-dong/lap-dung',
-        element: <LapDungNew />,
-      },
-      {
-        path: '/du-an',
+        path: "/du-an",
         element: <DuAnPage />,
       },
       {
-        path: '/du-an/:value',
+        path: "/du-an/:value",
         element: <DuAnDetail />,
       },
       {
-        element: <PrivateRoute />,
-        children: [
-          // {
-          //   path: '/:guildId/rank-customize',
-          //   element: <RankCardCustom />,
-          // },
-          // {
-          //   path: '/dashboard',
-          //   element: <Dashboard />,
-          // },
-        ],
+        path: "/lien-he",
+        element: <LienHePage />,
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // <React.StrictMode>
-  <QueryClientProvider client={queryClient}>
-    <AppThemeProvider>
-      <RouterProvider router={router} />
-    </AppThemeProvider>
-  </QueryClientProvider>
-  // </React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <ConfigProvider theme={antdTheme}>
+      <StyleProvider hashPriority="low">
+        <RouterProvider router={router} />
+      </StyleProvider>
+    </ConfigProvider>
+  </React.StrictMode>
 );

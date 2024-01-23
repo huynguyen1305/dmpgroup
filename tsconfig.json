@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client", "vite-plugin-svgr/client"],
-    "allowJs": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
 
     /* Bundler mode */
     "moduleResolution": "node",
@@ -22,14 +19,12 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Alias Path */
+    // Paths
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
