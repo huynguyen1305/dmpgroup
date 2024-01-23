@@ -11,7 +11,7 @@ import ErrorPage from "@/pages/ErrorPage/ErrorPage";
 import { antdTheme } from "@/configs/antdTheme";
 
 import GioiThieuPage from "@/pages/GioiThieuPage/GioiThieuPage";
-import HomePage from "@/pages/Homepage/HomePage";
+import HomePage from "@/pages/HomepageNew/HomePage";
 import TinTucPage from "@/pages/TinTucPage/TinTucPage";
 import ThietKePage from "@/pages/ThietKePage";
 import ActivePage from "@/pages/ActivePage/ActivePage";
