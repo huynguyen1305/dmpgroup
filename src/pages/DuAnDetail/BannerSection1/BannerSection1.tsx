@@ -61,7 +61,7 @@ const items = [
     key: 3,
     name: "SLP LONG HẬU Logistic GD2",
     value: "slp-long-hau-logistic-gd2",
-    img: "https://www.dpmgroup.vn/assets/lvhd-4-3af5b41f.png",
+    img: backgroundHomepage,
     info: `
       <ul class="list-disc">
       <li class="elementor-icon-list-item"><span class="elementor-icon-list-text"><b>Chủ đầu tư:&nbsp;</b>Cty CP Đầu tư Phát triển Minh Global</span></li>

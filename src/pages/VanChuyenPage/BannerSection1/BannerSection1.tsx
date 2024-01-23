@@ -61,7 +61,7 @@ const items = [
     key: 3,
     name: "SLP LONG HẬU Logistic GD2",
     value: "slp-long-hau-logistic-gd2",
-    img: "https://www.dpmgroup.vn/assets/lvhd-4-3af5b41f.png",
+    img: backgroundHomepage,
     info: `
       <ul class="list-disc">
       <li class="elementor-icon-list-item"><span class="elementor-icon-list-text"><b>Chủ đầu tư:&nbsp;</b>Cty CP Đầu tư Phát triển Minh Global</span></li>
@@ -151,7 +151,7 @@ const BannerSection1 = () => {
         <div
           className="w-full h-full absolute inset-0 z-[1] bg-no-repeat bg-cover"
           style={{
-            backgroundImage: `url("https://www.dpmgroup.vn/assets/lvhd-4-3af5b41f.png")`,
+            backgroundImage: `url("${backgroundHomepage}")`,
             filter: "blur(3px)",
             opacity: 0.8,
           }}

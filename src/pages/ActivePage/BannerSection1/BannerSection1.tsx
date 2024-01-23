@@ -14,8 +14,9 @@ const BannerSection1 = () => {
         <div
           className="w-full h-full absolute inset-0 z-[1] bg-no-repeat bg-cover"
           style={{
-            backgroundImage: `url("https://www.dpmgroup.vn/assets/lvhd-0-5d0c7eca.png")`,
+            backgroundImage: `url("${backgroundHomepage}")`,
             filter: "blur(1px)",
+            backgroundPosition: "center",
             // opacity: 0.8,
           }}
         />
