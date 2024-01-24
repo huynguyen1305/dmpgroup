@@ -1,0 +1,38 @@
+.trapezoid_image {
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  }
+  
+  :where[class^="ant-image"] {
+    width: 100%;
+  }
+  
+  $color: #fff;
+  
+  .corner_top_curved {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 45vh 42vw 0;
+  }
+  
+.param1{
+    &::-webkit-scrollbar {
+        width: 20px;
+        cursor: pointer;
+      }
+      
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: white;
+        border-radius: 2rem;
+      }
+       
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #354B66;
+        border-radius: 2rem; 
+      }
+      
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #354B66; 
+      }
+}

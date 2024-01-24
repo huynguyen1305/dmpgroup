@@ -1,9 +1,10 @@
 import { Typography } from "antd";
 import backgroundHomepage from "@/assets/images/bg-home-page-tin-tuc.png";
-import cardImage1 from "@/assets/images/card-image-1.png";
-import cardImage2 from "@/assets/images/card-image-2.png";
+
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+
+import { tintucs } from "@/mocks";
 
 const TinTucSection = () => {
   return (
@@ -23,135 +24,85 @@ const TinTucSection = () => {
           <div className="flex w-full h-full pb-10 justify-center">
             <div className="w-2/5 h-full px-4">
               <div className="flex flex-col w-full h-full">
-                <div className="w-full h-full">
-                  <img alt="img" src={cardImage1} className="w-full h-full" />
-                </div>
-                <div className="w-full h-full bg-white flex flex-col justify-around px-5 max-h-[30%]">
-                  <Link to={"/tin-tuc/1"}>
-                    <Typography className=" text-[#354B99] text-2xl font-semibold">
-                      Lorem ipsum dolor sit amet
-                    </Typography>
-                  </Link>
+                {tintucs.map((tintuc) => {
+                  if (tintuc.id === 1)
+                    return (
+                      <>
+                        <div className="w-full h-[70%]">
+                          <img
+                            alt="img"
+                            src={tintuc.image}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="w-full h-full bg-white flex flex-col justify-around px-5 max-h-[30%]">
+                          <Link to={`/tin-tuc/${tintuc.slug}`}>
+                            <Typography className=" text-[#354B99] text-2xl font-semibold">
+                              {tintuc.title}
+                            </Typography>
+                          </Link>
 
-                  <Typography className=" text-xl text-[#354B99]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore
-                  </Typography>
+                          <Typography className=" text-xl text-[#354B99]">
+                            {tintuc.desc}
+                          </Typography>
 
-                  <Link to="/tin-tuc/1">
-                    <div className="w-fit flex items-center gap-5 cursor-pointer">
-                      <Typography className="text-base font-extrabold text-[#354B99] ">
-                        READ MORE
-                      </Typography>
-                      <ArrowRightOutlined style={{ color: "#354B99" }} />
-                    </div>
-                  </Link>
-                </div>
+                          <Link to={`/tin-tuc/${tintuc.slug}`}>
+                            <div className="w-fit flex items-center gap-5 cursor-pointer">
+                              <Typography className="text-base font-extrabold text-[#354B99] ">
+                                READ MORE
+                              </Typography>
+                              <ArrowRightOutlined
+                                style={{ color: "#354B99" }}
+                              />
+                            </div>
+                          </Link>
+                        </div>
+                      </>
+                    );
+                })}
               </div>
             </div>
             <div className="w-3/5 h-full flex flex-col gap-4">
-              <div className="w-full h-full">
-                <div className="flex w-full h-full">
-                  <div className="">
-                    <img
-                      src={cardImage2}
-                      alt="img"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="bg-white max-w-[78%] h-full justify-around">
-                    <div className="flex flex-col w-full h-full justify-around px-5">
-                      <Link to={"/tin-tuc/2"}>
-                        <Typography className=" text-[#354B99] text-2xl font-semibold">
-                          Lorem ipsum dolor sit amet aaaaaaa11111zxczxc
-                        </Typography>
-                      </Link>
-
-                      <Typography className=" text-xl text-[#354B99]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore
-                      </Typography>
-
-                      <Link to="/tin-tuc/2">
-                        <div className="w-fit flex items-center gap-5 cursor-pointer">
-                          <Typography className="text-base font-extrabold text-[#354B99] ">
-                            READ MORE
-                          </Typography>
-                          <ArrowRightOutlined style={{ color: "#354B99" }} />
+              {tintucs.map((item) => {
+                if (item.id > 1 && item.id < 5)
+                  return (
+                    <div className="w-full h-[32%]">
+                      <div className="flex w-full h-full">
+                        <div className="w-[24%] h-full">
+                          <img
+                            src={item.image}
+                            alt="img"
+                            className="w-full h-full object-cover"
+                          />
                         </div>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full h-full">
-                <div className="flex w-full h-full">
-                  <div className="">
-                    <img
-                      src={cardImage2}
-                      alt="img"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="bg-white max-w-[78%] h-full justify-around">
-                    <div className="flex flex-col w-full h-full justify-around px-5">
-                      <Link to={"/tin-tuc/3"}>
-                        <Typography className=" text-[#354B99] text-2xl font-semibold">
-                          Lorem ipsum dolor sit amet aaaaaaa11111zxczxc
-                        </Typography>
-                      </Link>
+                        <div className="bg-white max-w-[78%] h-full justify-around">
+                          <div className="flex flex-col w-full h-full justify-around px-5">
+                            <Link to={`/tin-tuc/${item.slug}`}>
+                              <Typography className=" text-[#354B99] text-2xl font-semibold">
+                                {item.title}
+                              </Typography>
+                            </Link>
 
-                      <Typography className=" text-xl text-[#354B99]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore
-                      </Typography>
+                            <Typography className=" text-xl text-[#354B99]">
+                              {item.desc}
+                            </Typography>
 
-                      <Link to={"/tin-tuc/3"}>
-                        <div className="w-fit flex items-center gap-5 cursor-pointer">
-                          <Typography className="text-base font-extrabold text-[#354B99] ">
-                            READ MORE
-                          </Typography>
-                          <ArrowRightOutlined style={{ color: "#354B99" }} />
+                            <Link to={`/tin-tuc/${item.slug}`}>
+                              <div className="w-fit flex items-center gap-5 cursor-pointer">
+                                <Typography className="text-base font-extrabold text-[#354B99] ">
+                                  READ MORE
+                                </Typography>
+                                <ArrowRightOutlined
+                                  style={{ color: "#354B99" }}
+                                />
+                              </div>
+                            </Link>
+                          </div>
                         </div>
-                      </Link>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full h-full">
-                <div className="flex w-full h-full">
-                  <div className="">
-                    <img
-                      src={cardImage2}
-                      alt="img"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="bg-white max-w-[78%] h-full justify-around">
-                    <div className="flex flex-col w-full h-full justify-around px-5">
-                      <Link to={"/tin-tuc/4"}>
-                        <Typography className=" text-[#354B99] text-2xl font-semibold">
-                          Lorem ipsum dolor sit amet aaaaaaa11111zxczxc
-                        </Typography>
-                      </Link>
-
-                      <Typography className=" text-xl text-[#354B99]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore
-                      </Typography>
-
-                      <Link to={"/tin-tuc/4"}>
-                        <div className="w-fit flex items-center gap-5 cursor-pointer">
-                          <Typography className="text-base font-extrabold text-[#354B99] ">
-                            READ MORE
-                          </Typography>
-                          <ArrowRightOutlined style={{ color: "#354B99" }} />
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  );
+              })}
             </div>
           </div>
         </div>

@@ -4,12 +4,12 @@
   
   &:hover{
     img{
-      transform: scale(1.1);
+      transform: scale(1.05);
       transition: all 0.3s linear;
     };
     article {
-      transform: translate(10%, -30%);
-      font-weight: 900 !important;
+      transform: translate(0, -30%);
+      font-weight: 600 !important;
       // color: red;
       transition: all 0.3s linear;
     } 

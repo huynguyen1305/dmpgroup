@@ -121,11 +121,11 @@ const CustomerSection = () => {
               | KHÁCH HÀNG & ĐỐI TÁC
             </Typography>
             <Typography className="text-xl font-light">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat null
+              Với đội ngũ cán bộ công nhân viên nhiều năm kinh nghiệm Công ty Cổ
+              Phần Tập Đoàn D P M đã tạo được sự đột phá trong xu hướng sử dụng
+              vật liệu và công nghệ mới vào công tác thiết kế, sản xuất và thi
+              công lắp dựng cho các công trình công nghiệp và dân dụng của công
+              ty tại Tp.Hồ Chí Minh và các tỉnh phía Nam như:
             </Typography>
           </div>
           <div className={styles.carousel_css}>

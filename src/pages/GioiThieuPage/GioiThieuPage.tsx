@@ -9,6 +9,7 @@ import ExecutiveBoardSection from "./ExecutiveBoardSection";
 import HistorySection from "./HistorySection";
 import ValueSection from "./ValueSection";
 import VisionSection from "./VisionSection";
+import GioiThieuCTSection from "./GioiThieuCT/GioiThieuCT";
 
 const gioiThieuSections = [
   {
@@ -18,6 +19,10 @@ const gioiThieuSections = [
   {
     name: "Thong diep section",
     href: "#thong-diep",
+  },
+  {
+    name: "Gioi thieu Ct section",
+    href: "#gt-ct",
   },
   {
     name: "History section",
@@ -64,6 +69,7 @@ const GioiThieuPage = () => {
       >
         <BannerSection />
         <ThongDiepSection />
+        <GioiThieuCTSection />
         <HistorySection />
         <VisionSection />
         <ValueSection />
