@@ -25,7 +25,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Dosis", "sans-serif"],
+        sans: ["Montserrat", "sans-serif"],
       },
     },
   },

@@ -41,7 +41,7 @@ const BannerSection1 = () => {
             onChange={onChange}
             value={value}
             style={{
-              fontFamily: `'Doris', sans-serif`,
+              fontFamily: `'Montserrat', serif`,
             }}
           />
         </div>
