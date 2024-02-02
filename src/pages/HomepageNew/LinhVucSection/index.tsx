@@ -11,19 +11,19 @@ const LinhVucSection = () => {
   return (
     <section className="w-full h-full pt-[80px] pb-[80px]">
       <div
-        className="w-full h-full bg-no-repeat bg-cover flex flex-col px-[80px]"
+        className="container mx-auto h-full bg-no-repeat bg-cover flex flex-col"
         style={{
           backgroundImage: `url(${backgroundHomepage})`,
         }}
       >
         <div className="mx-auto h-full flex flex-col">
           <Link to="/linh-vuc-hoat-dong">
-            <Typography className="text-[8vh] font-extrabold">
+            <Typography className="text-[6.5vh] font-extrabold">
               | LĨNH VỰC HOẠT ĐỘNG
             </Typography>
           </Link>
 
-          <div className="flex h-[80%] my-10">
+          <div className="flex h-[80%] mt-[90px] mb-[40px]">
             {linhVucHoatDongHomePage.map((item, index) => {
               return (
                 <Col
@@ -39,17 +39,14 @@ const LinhVucSection = () => {
                       )}
                     >
                       <div
-                        className="w-full h-full absolute inset-0 z-[1]"
-                        style={{
-                          background: `linear-gradient(180deg, rgba(53, 75, 153, 0.00) 0%, #354B99 110%)`,
-                        }}
+                        className={`w-full h-full absolute inset-[4px] z-[1] ${styles["bg-dim-card"]}`}
                       ></div>
                       <img
                         alt="img"
                         src={item.image}
                         className="w-full h-full object-cover object-center"
                       />
-                      <Typography className="w-full absolute bottom-[5%] left-0 capitalize z-10 text-white text-[4vh] ml-7">
+                      <Typography className="absolute bottom-[5%] left-[1rem] capitalize z-10 text-white text-[4vh] ml-7">
                         {item.name}
                       </Typography>
                     </div>

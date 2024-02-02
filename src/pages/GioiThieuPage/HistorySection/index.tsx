@@ -17,7 +17,7 @@ const HistorySection = () => {
       >
         <div className="container mx-auto px-[3rem] w-full h-full flex flex-col">
           <div className="flex flex-col justify-center items-center">
-            <Typography className="text-[8vh] font-extrabold">
+            <Typography className="text-[6.5vh] font-extrabold">
               | LỊCH SỬ HÌNH THÀNH
             </Typography>
             <Typography className="container px-[10%] text-xl font-light text-center">

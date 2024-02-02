@@ -65,7 +65,7 @@ const AppHeader = () => {
 
       <div
         className="flex items-center cursor-pointer flex-shrink-0"
-        style={{ fontFamily: `Montserrat, serif`, fontSize: "16px" }}
+        style={{ fontFamily: `Inter, sans-serif`, fontSize: "16px" }}
       >
         <span
           onClick={() => i18n.changeLanguage("vi")}

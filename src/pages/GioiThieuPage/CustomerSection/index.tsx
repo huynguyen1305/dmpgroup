@@ -117,7 +117,7 @@ const CustomerSection = () => {
       >
         <div className="flex flex-col px-[10%] w-full gap-10 h-[60vh]">
           <div className="flex flex-col gap-5 h-full">
-            <Typography className="text-[8vh] font-extrabold">
+            <Typography className="text-[6.5vh] font-extrabold">
               | KHÁCH HÀNG & ĐỐI TÁC
             </Typography>
             <Typography className="text-xl font-light">
@@ -135,8 +135,10 @@ const CustomerSection = () => {
               slidesToScroll={1}
               dots
               infinite
+              easing="linear"
               speed={500}
-              autoplaySpeed={2000}
+              autoplaySpeed={1500}
+              pauseOnHover={false}
               style={{ width: "100%", height: "300px" }}
             >
               {imageLists.map((item) => (

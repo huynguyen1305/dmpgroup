@@ -29,27 +29,33 @@ const BannerSection1 = () => {
 
   return (
     <section className="w-full h-full pt-[80px]">
-      <div className="w-full mx-auto h-full pb-10 px-12">
-        <div className="flex justify-between items-center">
-          <Typography className="text-white text-[8vh] font-extrabold">
-            | TẤT CẢ DỰ ÁN
-          </Typography>
-          <input
-            type="text"
-            className="w-[300px] bg-white border border-white text-gray-900 text-xl rounded-3xl focus:ring-white focus:border-white block px-4 py-2"
-            placeholder="Tìm kiếm dự án"
-            onChange={onChange}
-            value={value}
-            style={{
-              fontFamily: `'Montserrat', serif`,
-            }}
-          />
+      <div className="w-full mx-auto h-full relative">
+        <div className="absolute top-[0.5rem] left-0 z-10 w-full">
+          <div className="flex w-full justify-between items-center px-12">
+            <input
+              type="text"
+              className="w-[300px] bg-white border border-white text-gray-900 text-xl rounded-3xl focus:ring-white focus:border-white block px-4 py-2"
+              placeholder="Tìm kiếm dự án"
+              onChange={onChange}
+              value={value}
+              style={{
+                fontFamily: `'Inter', sans-serif`,
+              }}
+            />
+            <Typography className="text-[#354B99] text-[6.5vh] font-extrabold text-center px-8 bg-white">
+              DỰ ÁN NỔI BẬT
+            </Typography>
+          </div>
         </div>
-        <div className="w-[95%] h-[90%] mx-auto pb-10">
-          <div className={cn("swiperWrapper_small", "rounded-2xl p-2")}>
+        <div className="w-[100%] h-[100%] mx-auto">
+          <div
+            className={cn(
+              "swiperWrapper_small",
+              "rounded-2xl p-1 w-full h-full"
+            )}
+          >
             <Swiper
               slidesPerView={1}
-              spaceBetween={"-32%"}
               centeredSlides
               loop={true}
               pagination={{
@@ -57,27 +63,33 @@ const BannerSection1 = () => {
               }}
               navigation
               modules={[Pagination, Navigation]}
+              effect="fade"
+              fadeEffect={{
+                crossFade: true,
+              }}
               className="w-full h-full"
             >
               {filterList.map((item) => (
-                <SwiperSlide className="relative my-auto" key={item.key}>
-                  <img
-                    src={item.img}
-                    alt="Philippe Pierga Design"
-                    className="w-[60%] h-[70%] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-xl border-[4px] border-white"
-                  />
-                  <div
-                    className="absolute bottom-[10%] left-[50%] translate-x-[-50%] p-4 delay-1000"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.8)",
-                      color: "black",
-                    }}
-                  >
-                    <Link to={`/du-an/${item.slug}`}>
-                      <Typography className="text-3xl font-extrabold text-[#354B99]">
-                        {item.name}
-                      </Typography>
-                    </Link>
+                <SwiperSlide key={item.slug} className="w-full h-full">
+                  <div className="w-full h-full">
+                    <img
+                      src={item.img}
+                      alt="img"
+                      className="w-full h-full object-cover"
+                    />
+                    <div
+                      className="absolute bottom-[2.5rem] left-[50%] translate-x-[-50%] p-4 delay-1000"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.8)",
+                        color: "black",
+                      }}
+                    >
+                      <Link to={`/du-an/${item.slug}`}>
+                        <Typography className="text-3xl font-extrabold text-[#354B99]">
+                          {item.name}
+                        </Typography>
+                      </Link>
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}

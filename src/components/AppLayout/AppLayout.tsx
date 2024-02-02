@@ -4,6 +4,12 @@ import AppHeader from "../AppHeader/AppHeader";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import "swiper/css/effect-cards";
+import "swiper/css/effect-creative";
+import "swiper/css/effect-fade";
+import "swiper/css/mousewheel";
+import "swiper/css/scrollbar";
 
 const AppLayout = () => {
   return (

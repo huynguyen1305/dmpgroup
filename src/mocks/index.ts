@@ -1,7 +1,6 @@
 import banner1 from "@/assets/images/1.jpg";
 import banner2 from "@/assets/images/2.jpg";
 import banner3 from "@/assets/images/3.jpg";
-import banner4 from "@/assets/images/4.jpg";
 
 import sanxuatImg from "@/assets/images/san-xuat.jpg";
 import lapdungImg from "@/assets/images/lap-dung.jpg";
@@ -150,10 +149,6 @@ export const banners = [
     id: 3,
     image: banner3,
   },
-  {
-    id: 4,
-    image: banner4,
-  },
 ];
 
 export const tintucs = [
@@ -208,6 +203,7 @@ export const tintucs = [
 
 export const duans = [
   {
+    isFeature: false,
     key: 1,
     name: "Nhà ở cho người thu nhập thấp Sơn An",
     value: "nha o cho nguoi thu nhap thap Son An",
@@ -227,6 +223,7 @@ export const duans = [
     images: [image2015_1_3D, image2015_1_1, image2015_1_2, image2015_1_3],
   },
   {
+    isFeature: false,
     key: 2,
     name: "Nhà trưng bay xe máy Honda Hòa Bình Minh",
     value: "nha trung bay xe may Honda Hoa Binh Minh",
@@ -254,6 +251,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: false,
     key: 3,
     name: "Nhà trưng bày và dịch vụ tổng hợp Honda Ô tô Bình Dương",
     value: "nha trung bay va dich vu tong hop honda o to binh duong",
@@ -280,6 +278,7 @@ export const duans = [
   },
 
   {
+    isFeature: false,
     key: 4,
     name: "Cầu nối bệnh viện Đa khoa Bình Định",
     value: "cau noi benh vien da khoa binh dinh",
@@ -305,6 +304,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: true,
     key: 5,
     name: "Nhà Xưởng A2-Dự án Paihong",
     value: "nha xuong a2 du an paihong",
@@ -331,6 +331,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: true,
     key: 6,
     name: "Nhà Kho C1, D1-Dự án Paihong",
     value: "nha xuong c1 d1 du an paihong",
@@ -357,6 +358,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: true,
     key: 7,
     name: "SLP LONG HẬU LOGICTICS GD2",
     value: "slp long hau logictics gd2",
@@ -386,6 +388,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: true,
     key: 8,
     name: "LOGOS LOGISTICS LONG AN",
     value: "logos logistics long an",
@@ -413,6 +416,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: true,
     key: 9,
     name: "BW TÂN PHÚ TRUNG",
     value: "bw tan phu trung",
@@ -441,6 +445,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: false,
     key: 10,
     name: "Dự án Nhà máy Uniben",
     value: "du an nha may uniben",
@@ -468,6 +473,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: false,
     key: 11,
     name: "Kho vận Á Châu số 1",
     value: "kho van a chau so 1",
@@ -487,6 +493,7 @@ export const duans = [
     images: [image2022_2_1, image2022_2_2, image2022_2_3, image2022_2_4],
   },
   {
+    isFeature: true,
     key: 12,
     name: "Dự án SLP Xuyên Á",
     value: "du an slp xuyen a",
@@ -515,6 +522,7 @@ export const duans = [
     ],
   },
   {
+    isFeature: true,
     key: 13,
     name: "Dự án Nhà máy 2 - Công ty Paihong Việt Nam",
     value: "du an nha may 2 cong ty paihong viet nam",

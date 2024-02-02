@@ -12,7 +12,7 @@ const BannerSection = () => {
       />
       <div className="container flex flex-col h-full pt-[30vh] pb-10 justify-between pl-[7.5%]">
         <div className="flex flex-col gap-2">
-          <Typography className="font-extrabold text-[8vh] opacity-100">
+          <Typography className="font-extrabold text-[6.5vh] opacity-100">
             GIỚI THIỆU
           </Typography>
           <div className="flex items-center gap-2">

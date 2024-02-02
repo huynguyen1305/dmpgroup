@@ -19,7 +19,7 @@ const VisionSection = () => {
         <div className="flex items-center gap-10">
           <div className="flex flex-col gap-5 max-w-[500px]">
             <div className="flex gap-4 items-center">
-              <Typography className="font-extrabold text-[8vh]">
+              <Typography className="font-extrabold text-[6.5vh]">
                 | TẦM NHÌN
               </Typography>
               <img src={iconEye} alt="" />
@@ -45,7 +45,7 @@ const VisionSection = () => {
               className={cn(styles.trapezoid_image, "w-full h-full")}
             />
             <div className="flex gap-4 items-center">
-              <Typography className="font-extrabold text-[8vh]">
+              <Typography className="font-extrabold text-[6.5vh]">
                 | SỨ MỆNH
               </Typography>
               <img src={iconMid} alt="" />

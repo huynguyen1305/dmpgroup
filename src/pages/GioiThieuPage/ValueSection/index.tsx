@@ -15,7 +15,7 @@ const ValueSection = () => {
           backgroundImage: `url(${backgroundValue})`,
         }}
       >
-        <Typography className="text-[8vh] font-extrabold">
+        <Typography className="text-[6.5vh] font-extrabold">
           | GIÁ TRỊ CỐT LÕI
         </Typography>
         <div className="flex items-center gap-16 h-fit">

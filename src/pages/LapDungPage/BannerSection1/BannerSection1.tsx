@@ -163,7 +163,7 @@ const BannerSection1 = () => {
           <div className="container mx-auto w-full h-full">
             <div className="w-full h-full flex">
               <div className="w-1/2 h-full flex flex-col gap-2">
-                <Typography className="font-extrabold text-[8vh]">
+                <Typography className="font-extrabold text-[6.5vh]">
                   | CÔNG TÁC LẮP DỰNG
                 </Typography>
                 <div className="flex items-center gap-2">

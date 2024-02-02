@@ -1,7 +1,9 @@
 import { cn } from "@/utils/twClassname";
 import styles from "./VeChungToiSection.module.scss";
 import { Typography } from "antd";
-// import backgroundHomepage from "@/assets/images/homepage-background.png";
+import circleRed from "@/assets/images/circle-red.jpg";
+import circleGreen from "@/assets/images/circle-green.jpg";
+import circleYellow from "@/assets/images/circle-yellow.jpg";
 import { Link } from "react-router-dom";
 
 const VeChungToiSection = () => {
@@ -17,30 +19,26 @@ const VeChungToiSection = () => {
               )}
             ></div>
             <div className="w-[19vw] h-[19vw] rounded-full z-10 absolute top-[11%] left-[10%] border-[6px] border-[#FF3030] bg-[#ff3030] overflow-hidden">
-              {/* <div className="w-full h-full bg-[#ff3030]"></div> */}
+              <img alt="img" src={circleRed} className="w-full h-full " />
             </div>
 
             <div className="w-[13vw] h-[13vw] rounded-full z-10 absolute top-[54%] left-[29%] border-[6px] border-[#E7CF1E] bg-[#E7CF1E] overflow-hidden">
-              {/* <img
+              <img
                 alt="img"
-                src={backgroundHomepage}
-                className="w-full h-full "
-              /> */}
+                src={circleYellow}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="w-[15vw] h-[15vw] rounded-full z-10 absolute top-[25%] left-[50%] border-[6px] border-[#2ED72E] bg-[#2ED72E] overflow-hidden">
-              {/* <img
-                alt="img"
-                src={backgroundHomepage}
-                className="w-full h-full"
-              /> */}
+              <img alt="img" src={circleGreen} className="w-full h-full" />
             </div>
           </div>
         </div>
         <div className={cn("w-[70%] relative")}>
           <div className={cn(styles.corner_top_curved, "w-[100%]")}></div>
-          <div className="absolute w-[50%] h-full right-[12.5%] top-[10%] flex flex-col gap-6">
+          <div className="absolute w-[50%] h-full right-[12.5%] top-[10%] flex flex-col gap-3">
             <Link to="/gioi-thieu">
-              <Typography className="text-[8vh] font-extrabold">
+              <Typography className="text-[6.5vh] font-extrabold">
                 | VỀ CHÚNG TÔI
               </Typography>
             </Link>

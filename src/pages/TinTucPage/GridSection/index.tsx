@@ -7,7 +7,7 @@ const GridSection = () => {
   return (
     <div className="w-full h-full bg-[#354b99]">
       <div className="flex flex-col gap-10 px-[10vw]">
-        <Typography className="text-[8vh] font-extrabold mt-10">
+        <Typography className="text-[6.5vh] font-extrabold mt-10">
           | TIN TỨC
         </Typography>
         <Row justify="center" align="middle" gutter={[120, 120]}>

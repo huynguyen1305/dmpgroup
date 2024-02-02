@@ -12,7 +12,7 @@ const ExecutiveBoardSection = () => {
         }}
       >
         <div className="container mx-auto flex flex-col px-10 w-full h-full justify-center">
-          <Typography className="text-[8vh] text-center font-extrabold">
+          <Typography className="text-[6.5vh] text-center font-extrabold">
             | BAN ĐIỀU HÀNH
           </Typography>
           <div className="flex justify-center items-center mt-6">

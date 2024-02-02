@@ -71,7 +71,7 @@ const BannerSection1 = () => {
                   dangerouslySetInnerHTML={{ __html: data?.info || "" }}
                   className="font-medium pt-2 px-6 text-white text-justify "
                   style={{
-                    fontFamily: `'Montserrat', serif`,
+                    fontFamily: `'Inter', sans-serif`,
                     fontSize: "18px",
                   }}
                 ></div>

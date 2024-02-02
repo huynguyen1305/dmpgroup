@@ -25,7 +25,7 @@ const ThongDiepSection = () => {
         }}
       >
         <div className="container mx-auto px-[2rem]">
-          <Typography className="text-[8vh] font-extrabold ml-[8%]">
+          <Typography className="text-[6.5vh] font-extrabold ml-[8%]">
             THÔNG ĐIỆP CHỦ TỊCH
           </Typography>
           <div className="relative mx-auto w-[78vw] h-full">

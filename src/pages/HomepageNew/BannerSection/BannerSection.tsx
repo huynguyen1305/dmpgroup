@@ -2,7 +2,7 @@
 // @@ts-expect-error
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import styles from "./BannerSection.module.scss";
 
 import { useLayoutEffect, useRef } from "react";
@@ -28,12 +28,16 @@ const BannerSection = () => {
           ref={swiperRef}
           grabCursor
           pagination={true}
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination, Autoplay, EffectFade]}
           slidesPerView={1}
           centeredSlides={true}
           loop
           autoplay={{
-            delay: 4000,
+            delay: 2000,
+          }}
+          effect="fade"
+          fadeEffect={{
+            crossFade: true,
           }}
           className="w-full h-full"
         >

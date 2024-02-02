@@ -5,6 +5,7 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 import { tintucs } from "@/mocks";
+import { Fragment } from "react";
 
 const TinTucSection = () => {
   return (
@@ -17,7 +18,7 @@ const TinTucSection = () => {
       >
         <div className="container w-full h-full flex flex-col">
           <Link to="/tin-tuc">
-            <Typography className="text-[8vh] font-extrabold text-center">
+            <Typography className="text-[6.5vh] font-extrabold text-center">
               | TIN TỨC
             </Typography>
           </Link>
@@ -27,7 +28,7 @@ const TinTucSection = () => {
                 {tintucs.map((tintuc) => {
                   if (tintuc.id === 1)
                     return (
-                      <>
+                      <Fragment key={tintuc.id}>
                         <div className="w-full h-[70%]">
                           <img
                             alt="img"
@@ -57,7 +58,7 @@ const TinTucSection = () => {
                             </div>
                           </Link>
                         </div>
-                      </>
+                      </Fragment>
                     );
                 })}
               </div>
@@ -66,7 +67,7 @@ const TinTucSection = () => {
               {tintucs.map((item) => {
                 if (item.id > 1 && item.id < 5)
                   return (
-                    <div className="w-full h-[32%]">
+                    <div className="w-full h-[32%]" key={item.id}>
                       <div className="flex w-full h-full">
                         <div className="w-[24%] h-full">
                           <img
